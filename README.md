@@ -233,7 +233,7 @@ $ rails g migration AddColumnsToUsers
   
   またはrails db:migrateする前に直接migration fileに記述する。
 　t.string :name
-  t.string :profile_image
+  t.string :profile_image_id
   t.text   :introduction
   t.string :greeting
 ```
