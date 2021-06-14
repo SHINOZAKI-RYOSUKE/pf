@@ -1,2 +1,21 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 my-5">
+      <div class="text-center" style="font-size: 100%;">
+          
+        <h1>My page</h1>
+        
+        <div><%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "0.jpeg", class: "user-image" %></div>
+        <div><%= current_user.name %></div>
+        <div><%= current_user.introduction %></div>
+        
+        
+        
+        <div><%= link_to "Config", edit_user_path(current_user) %></div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
