@@ -4,9 +4,29 @@ class ContentsController < ApplicationController
   end
 
   def show
+    @content = Content.find(params[:id])
+  end
+  
+  def destroy
+    @content = Content.find(params[:id])
+    @content.destroy
+    redirect_to user_path(current_user.id)
   end
 
   def edit
+    @content = Content.find(params[:id])
+    if @content.user != current_user
+    redirect_to content_path(@content)
+    end
+  end
+  
+  def update
+    @content = Content.find(params[:id])
+    if @content.update(content_params)
+    redirect_to content_path(@content.id), notice:"You have updated content successfully."
+    else
+    render "edit"
+    end
   end
 
   def new
