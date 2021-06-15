@@ -4,9 +4,17 @@ class ContentsController < ApplicationController
   end
 
   def show
+    @content = Content.find(params[:id])
+  end
+  
+  def destroy
+    @content = Content.find(params[:id])
+    @content.destroy
+    redirect_to user_path(current_user)
   end
 
   def edit
+    
   end
 
   def new
