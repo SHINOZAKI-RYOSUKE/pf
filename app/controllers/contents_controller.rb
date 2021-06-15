@@ -10,12 +10,26 @@ class ContentsController < ApplicationController
   end
 
   def new
+    @content = Content.new
   end
+  
+  def create
+    @content = Content.new(content_params)
+    @content.user_id = current_user.id
+    if @content.save
+    redirect_to content_path(@content.id), notice:"You have created content successfully."
+    else
+    render "new"
+    end
+  end
+
   
   
   private
-  def user_params
+  
+  def content_params
     params.require(:content).permit(:content_image, :description)
   end
+  
   
 end
