@@ -5,11 +5,9 @@
           
         <h1>My page</h1>
         
-        <div><%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "0.jpeg", class: "user-image" %></div>
-        <div><%= current_user.name %></div>
-        <div><%= current_user.introduction %></div>
-        
-        
+        <div><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "0.jpeg", class: "user-image" %></div>
+        <div><%= @user.name %></div>
+        <div><%= @user.introduction %></div>
         
         <div><%= link_to "Config", edit_user_path(current_user) %></div>
         
