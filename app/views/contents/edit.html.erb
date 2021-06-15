@@ -1,2 +1,27 @@
-<h1>Contents#edit</h1>
-<p>Find me in app/views/contents/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 my-5">
+      <div class="text-center" style="font-size: 100%;">
+          
+        <h1>Re Post</h1>
+        
+        <%= form_with model:@content, local:true do |f| %>
+        <div class="form-group">
+          <label for="content_image">Image</label>
+            <%= f.attachment_field :content_image %>
+        </div>
+
+        <div class="form-group">
+          <label for="content_description">description</label>
+            <%= f.text_field :description %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.submit '再投稿' %>
+        </div>
+      　<% end %>
+        
+      </div>
+    </div>
+  </div>
+</div>
