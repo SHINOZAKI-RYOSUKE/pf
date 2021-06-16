@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   has_many :contents
   has_many :comments
-  has_many :favotites
+  has_many :favorites
   has_many :chats
   has_many :user_rooms
   has_many :rooms, through: :user_rooms
