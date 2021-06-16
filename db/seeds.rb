@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+20.times do |n|
+  
+  User.create!(
+    email: "test#{n + 1}@test.com",
+    name: "User#{n + 1}",
+    password: "password",
+    password_confirmation: "password",
+    profile_image: open("./app/assets/images/#{n + 1}.jpeg"),
+  )
+end
+
+
+
+5.times do |n|
+  
+  Content.create!(
+    user_id: "#{n + 1}",
+    content_image: File.open("./app/assets/images/#{n + 1}.jpeg"),
+    description: "初めまして！皆さんの素敵なレイアウトを参考に自身の部屋を小さくイノベーションしました！",
+  )
+end
