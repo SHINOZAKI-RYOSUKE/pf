@@ -11,13 +11,16 @@ Rails.application.routes.draw do
     
 
     resources :users, only: [:index, :show, :edit, :update] do
-     resources :relationships, only: [:index, :create, :destroy]
+     resources :relationships, only: [:index]
+     resource  :relationships, only: [:create, :destroy]
     end
     
 
     resources :contents do
-     resources :favorites, only: [:index, :create, :destroy]
-     resources :comments, only: [:index, :create, :destroy]
+     resources :favorites, only: [:index]
+     resource  :favorites, only: [:create, :destroy]
+     resources :comments,  only: [:index]
+     resource  :comments,  only: [:create, :destroy]
     end
     
     
