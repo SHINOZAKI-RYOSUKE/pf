@@ -1,7 +1,7 @@
 <% if content.favorited_by?(current_user) %>
   <p>
     <%= link_to content_favorites_path(content), method: :delete, remote: true do %>
-      ♥<%= content.favorites.count %> イイネ
+      ♥<%= content.favorites.count %> 
     <% end %>
   </p>
 <% else %>
