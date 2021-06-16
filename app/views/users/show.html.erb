@@ -10,11 +10,15 @@
         <div><%= @user.introduction %></div>
         
         <div class="following">
+          <%= link_to user_relationships_path(@user.id), class: 'link' do %>
           <p>フォロー数：<%= @user.followings.count %></p>
+          <% end %>
         </div>
         
         <div class="follower">
+          <%= link_to user_relationships_path(@user.id), class: 'link' do %>
           <p>フォロワー数：<%= @user.followers.count %></p>
+          <% end %>
         </div>
         
         <% if current_user != @user %>
