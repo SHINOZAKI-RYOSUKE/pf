@@ -45,8 +45,7 @@
 
           <div class="comment-count">
             コメント件数：<%= link_to content.comments.count, content_comments_path(content) %>
-           
-          </tdiv>
+          </div>
           
           <div class="favorite_buttons_<%= content.id %>">
             <%= render 'favorites/favorite',content: content %>
