@@ -1,4 +1,7 @@
 class ContentsController < ApplicationController
+  
+  before_action :authenticate_user!, except:[:index, :show]
+  
   def index
     @contents = Content.all
   end
