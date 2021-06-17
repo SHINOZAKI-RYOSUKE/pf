@@ -43,6 +43,10 @@
             <div><%= attachment_image_tag content, :content_image, :fill, 350, 300, format: 'jpg' %></div>
           <% end %>
 
+          <div class="comment-count">
+            コメント件数：<%= link_to content.comments.count, content_comments_path(content) %>
+          </div>
+          
           <div class="favorite_buttons_<%= content.id %>">
             <%= render 'favorites/favorite',content: content %>
           </div>

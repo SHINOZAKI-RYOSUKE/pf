@@ -3,8 +3,7 @@ class FavoritesController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    user = User.find(params[:user_id])
-    @users = user.favorites
+    @content = Content.find(params[:content_id])
   end
 
   def create
