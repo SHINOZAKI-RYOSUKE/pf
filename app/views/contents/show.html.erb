@@ -19,9 +19,13 @@
         <% end %>
 
         <div><%= @content.description %></div>
-        
-        <div><%= link_to "変更する", edit_content_path(@content) %></div>
-        <div><%= link_to "削除する", content_path, method: :delete %></div>
+
+        <% if current_user.id == @content.user_id %>
+          <div><%= link_to "変更する", edit_content_path(@content) %></div>
+          <div><%= link_to "削除する", content_path, method: :delete %></div>
+        <% end %>
+
+        <%= link_to 'Comment +', content_comments_path(@content) %>
 
       </div>
     </div>
