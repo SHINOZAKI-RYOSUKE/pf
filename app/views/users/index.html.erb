@@ -5,6 +5,7 @@
 
         <h1>Users</h1>
         <% @users.each do |user| %>
+        
           <%= link_to user_path(user.id), class: 'link' do %>
             <div><%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "0.jpeg", class: "user-image" %></div>
             <div><%= user.name %></div>

@@ -10,6 +10,8 @@
   user = User.create!(
     email: "test#{n + 1}@test.com",
     name: "User#{n + 1}",
+    introduction: "初めまして、これから参考になるアイテムなどを投稿していきたいと思います。",
+    greeting: "こんにちわ！",
     password: "password",
     password_confirmation: "password",
     profile_image: open("./app/assets/images/#{n + 1}.jpeg"),
@@ -18,8 +20,14 @@
     3.times do |i|
       user.contents.create!(
         content_image: File.open("./app/assets/images/#{i + 1}.jpeg"),
-        description: "初めまして！皆さんの素敵なレイアウトを参考に自身の部屋を小さくイノベーションしました！",
+        description: "皆さんの素敵なレイアウトを参考に自身の部屋を小さくイノベーションしました！",
       )
     end 
-  
+    
+    # 5.times do |x|
+    #   user.followings.create!(
+        
+    #   )
+    # end
+   
 end
