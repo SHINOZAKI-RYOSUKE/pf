@@ -5,18 +5,18 @@
 
 
 
-        <h1>Users</h1>
-        
-        <h1 id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>"><%= @user.name %> さんとのチャット</h1>
+        <h1>Chats</h1>
+
+        <h3 id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>"><%= @user.name %> さんとのチャット</h3>
           <%= form_with model: @chat do |f| %>
               <%= f.text_field :message %>
               <%= f.hidden_field :room_id %>
               <%= f.submit %>
             <% end %>
             <%= paginate @chats %>
-          
+
           <div class="message">
-          
+
             <% @chats.each do |chat| %>
               <% if chat.user_id == current_user.id %>
                 <p style="text-align: right;"><%= chat.message %></p>

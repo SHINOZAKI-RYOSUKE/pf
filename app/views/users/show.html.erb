@@ -35,9 +35,7 @@
         
         <% if current_user != @user %>
         <div>
-          <div>
-            <%= link_to 'Direct Messenge', chat_path(@user.id) %>
-          </div>
+          <%= link_to 'Direct Messenge', chat_path(@user.id) %>
         </div>
         <% end %>
 
