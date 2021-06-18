@@ -6,28 +6,28 @@
 
 
         <h1>Contents</h1>
-        
+
         <% @contents.each do |content| %>
-        
+
           <%= link_to content_path(content.id), class: 'link' do %>
             <div><%= attachment_image_tag content, :content_image, :fill, 350, 300, format: 'jpg' %></div>
           <% end %>
-          
+
           <div class="comment-count">
-            コメント件数：<%= link_to content.comments.count, content_comments_path(content) %>
+            コメント件数：<%= link_to content.comments.count, content_comments_path(content.id) %>
           </tdiv>
-          
+
           <div class="favorite_buttons_<%= content.id %>">
             <%= render 'favorites/favorite',content: content %>
           </div>
-          
+
           <%= link_to user_path(content.user.id), class: 'link' do %>
             <div><%= attachment_image_tag content.user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "0.jpeg", class: "user-image" %></div>
             <div><%= content.user.name %></div>
-          <% end %
-          
+          <% end %>
+
           <div><%= content.description %></div>
-          
+
         <% end %>
 
 

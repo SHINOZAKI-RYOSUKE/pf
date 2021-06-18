@@ -5,7 +5,20 @@
 
 
 
-        <h1>Users</h1>
+        <h1>Chat rooms</h1>
+        
+        <% @rooms.each do |room| %>
+        
+          <%= link_to user_path(room.user.id), class: 'link' do %>
+            <div><%= attachment_image_tag room.user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "0.jpeg", class: "user-image" %></div>
+            <div><%= room.user.name %></div>
+          <% end %>
+          
+          <div><%= room.user.greeting %></div>
+          
+          <div><%= link_to "DM", chats_path(room.user.id) %></div>
+          
+        <% end %>
  
  
  

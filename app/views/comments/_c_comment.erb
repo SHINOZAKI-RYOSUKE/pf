@@ -1,4 +1,4 @@
-<% comments.each do |c_comment| %>
+<% content.comments.each do |c_comment| %>
         
   <%= link_to user_path(c_comment.user.id), class: 'link' do %>
     <div><%= attachment_image_tag c_comment.user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "0.jpeg", class: "user-image" %></div>
