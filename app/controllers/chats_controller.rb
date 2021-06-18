@@ -2,6 +2,7 @@ class ChatsController < ApplicationController
   
   before_action :authenticate_user!
   
+  
   def index
   end
 
@@ -35,4 +36,5 @@ class ChatsController < ApplicationController
   def chat_params
     params.require(:chat).permit(:message, :room_id)
   end
+  
 end

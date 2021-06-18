@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   
   before_action :authenticate_user!
   
+  
   def index
     @comments = Comment.all
     
@@ -33,6 +34,5 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:comment)
   end
-  
   
 end
