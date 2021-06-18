@@ -3,8 +3,10 @@
     <div class="col-12 my-5">
       <div class="text-center" style="font-size: 100%;">
 
-        <h1>Users</h1>
 
+
+        <h1>Users</h1>
+        
         <h1 id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>"><%= @user.name %> さんとのチャット</h1>
           <%= form_with model: @chat do |f| %>
               <%= f.text_field :message %>
@@ -23,6 +25,8 @@
               <% end %>
             <% end %>
           </div>
+
+
 
       </div>
     </div>

@@ -3,16 +3,19 @@
     <div class="col-12 my-5">
       <div class="text-center" style="font-size: 100%;">
 
-        <h1>Favorites</h1>
-        <% @content.favorites.each do |favo| %>
 
+
+        <h1>Favorites</h1>
+        
+        <% @content.favorites.each do |favo| %>
+        
           <%= link_to user_path(favo.user.id), class: 'link' do %>
             <div><%= attachment_image_tag favo.user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "0.jpeg", class: "user-image" %></div>
             <div><%= favo.user.name %></div>
           <% end %>
-
+          
           <div><%= favo.user.greeting %></div>
-
+          
           <% if current_user != favo.user %>
             <% if favo.user.followed_by?(current_user) %>
               <div><%= link_to "フォロー外す", user_relationships_path(favo.user.id), method: :delete, class: "btn btn-primary" %></div>
@@ -20,8 +23,10 @@
               <div><%= link_to "フォローする", user_relationships_path(favo.user.id), method: :post, class: "btn btn-success" %></div>
             <% end %>
           <% end %>
-
+          
         <% end %>
+
+
 
       </div>
     </div>

@@ -3,10 +3,12 @@
     <div class="col-12 my-5">
       <div class="text-center" style="font-size: 100%;">
 
+
+
         <h1>Content Show</h1>
-
+        
         <div><%= attachment_image_tag @content, :content_image, :fill, 1000, 600, format: 'jpg' %></div>
-
+        
         <div class="comment-count">
           コメント件数：<%= link_to @content.comments.count, content_comments_path(@content) %>
         </tdiv>
@@ -15,20 +17,22 @@
           <%= render 'favorites/favorite',content: @content %>
         </div>
         
-
+        
         <%= link_to user_path(@content.user.id), class: 'link' do %>
           <div><%= attachment_image_tag @content.user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "0.jpeg", class: "user-image" %></div>
           <div><%= @content.user.name %></div>
         <% end %>
-
+        
         <div><%= @content.description %></div>
-
+        
         <% if current_user.id == @content.user_id %>
           <div><%= link_to "変更する", edit_content_path(@content) %></div>
           <div><%= link_to "削除する", content_path, method: :delete %></div>
         <% end %>
-
+        
         <%= link_to 'Comment +', content_comments_path(@content) %>
+
+
 
       </div>
     </div>
