@@ -24,10 +24,10 @@
       )
     end 
     
-    # 5.times do |x|
-    #   user.followings.create!(
+    5.times do |x|
+      user.followings.create!(
         
-    #   )
-    # end
+      )
+    end
    
 end
