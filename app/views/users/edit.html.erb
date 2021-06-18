@@ -2,7 +2,9 @@
   <div class="row">
     <div class="col-12 my-5">
       <div class="text-center" style="font-size: 100%;">
-          
+
+
+
         <h1>User Config</h1>
         
         <%= form_with model:@user, local:true do |f| %>
@@ -10,12 +12,12 @@
           <label for="user_name">Name</label>
             <%= f.text_field :name %>
         </div>
-
+        
         <div class="form-group">
           <label for="user_image">Image</label>
             <%= f.attachment_field :profile_image %>
         </div>
-
+        
         <div class="form-group">
           <label for="user_introduction">Introduction</label>
             <%= f.text_field :introduction %>
@@ -25,12 +27,14 @@
           <label for="user_greeting">Greeting</label>
             <%= f.text_field :greeting %>
         </div>
-
+        
         <div class="form-group">
           <%= f.submit 'Update User' %>
         </div>
       　<% end %>
-        
+
+
+
       </div>
     </div>
   </div>

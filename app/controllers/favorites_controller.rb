@@ -2,6 +2,7 @@ class FavoritesController < ApplicationController
   
   before_action :authenticate_user!
   
+  
   def index
     @content = Content.find(params[:content_id])
   end
