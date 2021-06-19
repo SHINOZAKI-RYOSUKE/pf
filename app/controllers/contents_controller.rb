@@ -14,7 +14,7 @@ class ContentsController < ApplicationController
   def destroy
     @content = Content.find(params[:id])
     @content.destroy
-    redirect_to user_path(current_user.id)
+    redirect_to user_path(current_user.id), notice:"You have destroy content successfully."
   end
 
   def edit
