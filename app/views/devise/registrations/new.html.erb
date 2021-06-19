@@ -17,7 +17,7 @@
 
             <div class="field mt-5">
               <%= f.label "Name" %><br />
-              <%= f.text_field :name, autofocus: true, placeholder: "名前" %>
+              <%= f.text_field :name, autofocus: true, placeholder: "ユーザー名" %>
             </div>
   
             <div class="field mt-4">
@@ -31,8 +31,8 @@
             </div>
   
             <div class="field mt-4">
-              <%= f.label "Password(確認用)" %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード(確認用)" %>
+              <%= f.label "Password" %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "(再確認)" %>
             </div>
   
             <div class="actions mt-5">

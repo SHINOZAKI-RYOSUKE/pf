@@ -8,3 +8,12 @@
   object-fit: cover;
   border-radius: 50%;
 }
+
+.side_left {
+  position: -webkit-fixed;
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  margin: 0;
+  line-height: 3;
+}
