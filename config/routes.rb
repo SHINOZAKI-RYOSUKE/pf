@@ -19,8 +19,8 @@ Rails.application.routes.draw do
     resources :contents do
      resources :favorites, only: [:index]
      resource  :favorites, only: [:create, :destroy]
-     resources :comments,  only: [:index]
-     resource  :comments,  only: [:create, :destroy]
+     resources :comments,  only: [:index, :destroy]
+     resource  :comments,  only: [:create]
     end
 
 

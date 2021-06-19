@@ -6,25 +6,26 @@
 
 
         <h1>Chats</h1>
-
+        
         <h3 id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>"><%= @user.name %> さんとのチャット</h3>
-          <%= form_with model: @chat do |f| %>
-              <%= f.text_field :message %>
-              <%= f.hidden_field :room_id %>
-              <%= f.submit %>
+        
+        <%= form_with model: @chat do |f| %>
+          <div><%= f.text_field :message %></div>
+          <div><%= f.hidden_field :room_id %></div>
+          <div><%= f.submit %></div>
+        <% end %>
+        
+        <div><%= paginate @chats %></div>
+        
+        <div class="message">
+          <% @chats.each do |chat| %>
+            <% if chat.user_id == current_user.id %>
+              <p style="text-align: right;"><%= chat.message %></p>
+            <% else %>
+              <p style="text-align: left;"><%= chat.message %></p>
             <% end %>
-            <%= paginate @chats %>
-
-          <div class="message">
-
-            <% @chats.each do |chat| %>
-              <% if chat.user_id == current_user.id %>
-                <p style="text-align: right;"><%= chat.message %></p>
-              <% else %>
-                <p style="text-align: left;"><%= chat.message %></p>
-              <% end %>
-            <% end %>
-          </div>
+          <% end %>
+        </div>
 
 
 
