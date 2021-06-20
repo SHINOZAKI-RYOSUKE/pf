@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// -------------------------------------
+// about　のスライドショーに当てるimages
+
+.about {
+  height :500px;
+}
+
+
 .background-image1 {
   background-image: image-url("1.jpeg");
 }

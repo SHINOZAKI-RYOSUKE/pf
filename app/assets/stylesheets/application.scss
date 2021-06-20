@@ -19,6 +19,7 @@
 @import 'font-awesome';
 
 // ---------------------------------
+// リセットCSS
 
 * {
   margin: 0;
@@ -28,12 +29,7 @@
 }
 
 // ---------------------------------
-
-.about {
-  height :500px;
-}
-
-// ---------------------------------
+// sign_up sign_in　のbackground-image編集
 
 #bg_img {
   background-image: image-url("0.jpeg");
@@ -43,6 +39,7 @@
 }
 
 // ---------------------------------
+// 全ての submit（input） フォームを編集
 
 input {
   background-color: transparent;
@@ -56,6 +53,7 @@ input:focus-visible {
 }
 
 // ---------------------------------
+// TOPにバックする為のボタン編集
 
 #back {
   position: fixed;
@@ -65,3 +63,11 @@ input:focus-visible {
 #back img {
   width: 50px;
 }
+
+// ---------------------------------
+// ロゴ編集
+
+// .logo {
+//   font-size: 100%;
+//   color: rgba(0, 0, 0, 0.5);
+// }
