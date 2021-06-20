@@ -7,24 +7,14 @@
 // Userアイコン用
 
 .user-image {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   object-fit: cover;
   border-radius: 50%;
+  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
 }
 
-.side_left {
-  position: -webkit-fixed;
-  position: fixed;
-  bottom: 0;
-  padding: 10px;
-  margin: 0;
-  line-height: 3;
-}
-
-// ------------------------------
-// Userコンテンツ一覧用
-
-.user_x {
-  
-}
+ .user-image:hover {
+   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+   transform: translateY(-2px);
+ }
