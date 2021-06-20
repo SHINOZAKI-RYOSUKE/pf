@@ -26,6 +26,7 @@
   padding: 0;
   box-sizing: border-box;
   color: #6c6b6b;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 // ---------------------------------
@@ -65,9 +66,9 @@ input:focus-visible {
 }
 
 // ---------------------------------
-// ロゴ編集
-
-// .logo {
-//   font-size: 100%;
-//   color: rgba(0, 0, 0, 0.5);
-// }
+// リンクに対して下線編集
+ 
+a,
+a:hover{
+  text-decoration: none !important;
+}

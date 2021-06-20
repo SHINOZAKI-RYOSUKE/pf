@@ -7,11 +7,20 @@
 // Userアイコン用
 
 .user-image {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   object-fit: cover;
   border-radius: 50%;
+  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
 }
+
+ .user-image:hover {
+   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+   transform: translateY(-2px);
+ }
+
+// ------------------------------
+// サイドバー（左）の固定編集
 
 .side_left {
   position: -webkit-fixed;
@@ -23,8 +32,16 @@
 }
 
 // ------------------------------
-// Userコンテンツ一覧用
+// Userコンテンツ一覧用（）マウスホバー時のシャドー等
 
-.user_x {
-  
+.user {
+  background-color: transparent;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
 }
+
+.user:hover {
+   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+   transform: translateY(-2px);
+ }
+ 
