@@ -17,7 +17,7 @@
         
         <h1 class="mb-5">Follow</h1>
         <% @users_A.each do |user| %>
-          <div class="user d-flex flex-row justify-content-between align-items-center mb-3 font-size-small">
+          <div class="card d-flex flex-row justify-content-between align-items-center mb-3 font-size-small">
 
             <%= link_to user_path(user.id), class: 'd-flex flex-row' do %>
               <div class="p-2 ml-3">
@@ -54,7 +54,7 @@
         
         <h1 class="mb-5">Follower</h1>
         <% @users_P.each do |user| %>
-          <div class="user d-flex flex-row justify-content-between align-items-center mb-3 font-size-small">
+          <div class="card d-flex flex-row justify-content-between align-items-center mb-3 font-size-small">
 
             <%= link_to user_path(user.id), class: 'd-flex flex-row' do %>
               <div class="p-2 ml-3">

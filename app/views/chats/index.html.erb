@@ -17,7 +17,7 @@
         
         <h1 class="mb-5">Chat rooms</h1>
         <% @rooms.each do |room| %>
-          <div class="user d-flex flex-row justify-content-between align-items-center mb-3">
+          <div class="card d-flex flex-row justify-content-between align-items-center mb-3">
             
             <%= link_to user_path(room.user.id), class: 'd-flex flex-row' do %>
               <div class="p-2 ml-3">

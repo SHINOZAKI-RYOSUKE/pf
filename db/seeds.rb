@@ -24,11 +24,11 @@
       )
     end 
     
-     5.times do |x|
-        user.favorites.create!(
-          user_id: n + 1,
-          content_id: 1..5,
-        )
-     end
+    5.times do |x|
+      user.favorites.create!(
+        user_id: n + 1,
+         content_id: n + 1,
+      )
+    end
    
 end

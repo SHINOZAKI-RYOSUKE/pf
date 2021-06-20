@@ -35,6 +35,7 @@ class User < ApplicationRecord
 # validates----------------------------------
   validates :name,
     presence: true,
+    uniqueness: true,
     length: { in: 2..20 }
   
   validates :introduction,
