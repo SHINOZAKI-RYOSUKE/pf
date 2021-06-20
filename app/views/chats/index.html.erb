@@ -1,28 +1,58 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-12 my-5">
-      <div class="text-center" style="font-size: 100%;">
-
-
-
-        <h1>Chat rooms</h1>
-
-        <% @rooms.each do |room| %>
-
-          <%= link_to user_path(room.user.id), class: 'link' do %>
-            <div><%= attachment_image_tag room.user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "0.jpeg", class: "user-image" %></div>
-            <div><%= room.user.name %></div>
-          <% end %>
-
-          <div><%= room.user.greeting %></div>
-
-          <div><%= link_to "DM", chat_path(room.user.id) %></div>
-
+    
+    <div class="col-2 text-center">
+      <div class="side_left">
+        <%= link_to new_content_path do %>
+        <i class="far fa-plus-square fa-3x"></i>
         <% end %>
-
-
-
       </div>
     </div>
+
+
+
+
+    <div class="col-8">
+      <div class="text-center">
+        
+        <h1 class="mb-5">Chat rooms</h1>
+        <% @rooms.each do |room| %>
+          <div class="user d-flex flex-row justify-content-between align-items-center mb-3">
+            
+            <%= link_to user_path(room.user.id), class: 'd-flex flex-row' do %>
+              <div class="p-2 ml-3">
+                <%= attachment_image_tag room.user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "0.jpeg", class: "user-image", style: "border-style: none;" %>
+              </div>
+            <% end %>
+            
+            <div class="p-2">
+              <%= room.user.name %>
+            </div>
+            
+            <div class="p-2">
+              <%= room.user.greeting %>
+            </div>
+            
+            <div class="p-2 mr-3">
+              <%= link_to "DM", chat_path(room.user.id), class: "btn btn-outline-success" %>
+            </div>
+            
+          </div>
+        <% end %>
+          
+      </div>
+    </div>
+
+
+
+
+    <div class="side_right col-2 text-center">
+      <span id="back">
+        <a href="#">
+          <i class="fas fa-angle-double-up fa-3x"></i>
+        </a>
+      </span>
+    </div>
+
   </div>
 </div>

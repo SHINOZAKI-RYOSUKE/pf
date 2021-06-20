@@ -1,38 +1,62 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-12 my-5">
-      <div class="text-center" style="font-size: 100%;">
-
-
-
-        <h1>Contents</h1>
-
-        <% @contents.each do |content| %>
-
-          <%= link_to content_path(content.id), class: 'link' do %>
-            <div><%= attachment_image_tag content, :content_image, :fill, 350, 300, format: 'jpg' %></div>
-          <% end %>
-
-          <div class="comment-count">
-            コメント件数：<%= link_to content.comments.count, content_comments_path(content.id) %>
-          </tdiv>
-
-          <div class="favorite_buttons_<%= content.id %>">
-            <%= render 'favorites/favorite',content: content %>
-          </div>
-
-          <%= link_to user_path(content.user.id), class: 'link' do %>
-            <div><%= attachment_image_tag content.user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "0.jpeg", class: "user-image" %></div>
-            <div><%= content.user.name %></div>
-          <% end %>
-
-          <div><%= content.description %></div>
-
+    
+    <div class="col-2 text-center">
+      <div class="side_left">
+        <%= link_to new_content_path do %>
+        <i class="far fa-plus-square fa-3x"></i>
         <% end %>
-
-
-
       </div>
     </div>
+------------
+
+    <div class="col-8">
+      <div class="text-center">
+        
+        <h1 class="mb-5">Contents</h1>
+        <% @contents.each do |content| %>
+          <div class="user d-flex flex-row justify-content-between align-items-center mb-3">
+
+            <%= link_to content_path(content.id), class: 'd-flex flex-row' do %>
+              <div><%= attachment_image_tag content, :content_image, :fill, 350, 300, format: 'jpg' %></div>
+            <% end %>
+            
+            
+            <%= link_to content_path(content.id), class: 'd-flex flex-row' do %>
+              <div class="p-2 ml-3">
+                <%= attachment_image_tag user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "0.jpeg", class: "user-image", style: "border-style: none;" %>
+              </div>
+            <% end %>
+  
+    
+            <div class="p-2">
+              コメント件数：<%= link_to content.comments.count, content_comments_path(content.id) %>
+            </div>
+  
+            <div class="p-2 favorite_buttons_<%= content.id %>">
+              <%= render 'favorites/favorite',content: content %>
+            </div>
+  
+            <%= link_to user_path(content.user.id), class: 'link' do %>
+              <div><%= attachment_image_tag content.user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "0.jpeg", class: "user-image" %></div>
+              <div><%= content.user.name %></div>
+            <% end %>
+  
+            <div><%= content.description %></div>
+  
+          <% end %>
+
+
+
+
+----------
+    <div class="side_right col-2 text-center">
+      <span id="back">
+        <a href="#">
+          <i class="fas fa-angle-double-up fa-3x"></i>
+        </a>
+      </span>
+    </div>
+
   </div>
 </div>

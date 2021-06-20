@@ -24,10 +24,11 @@
       )
     end 
     
-    # 5.times do |x|
-    #   user.followings.create!(
-        
-    #   )
-    # end
+     5.times do |x|
+        user.favorites.create!(
+          user_id: n + 1,
+          content_id: 1..5,
+        )
+     end
    
 end

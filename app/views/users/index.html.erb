@@ -36,7 +36,7 @@
             <div class="p-2 mr-3">
               <% if current_user != user %>
                 <% if user.followed_by?(current_user) %>
-                  <%= link_to "フォロー解除", user_relationships_path(user.id), method: :delete, class: "btn btn-secondary" %>
+                  <%= link_to "フォロー解除", user_relationships_path(user.id), method: :delete, class: "btn btn-outline-secondary" %>
                 <% else %>
                   <%= link_to "フォローする", user_relationships_path(user.id), method: :post, class: "btn btn-info" %>
                 <% end %>
