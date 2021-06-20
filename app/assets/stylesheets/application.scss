@@ -18,6 +18,9 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+// ---------------------------------
+// リセットCSS
+
 * {
   margin: 0;
   padding: 0;
@@ -25,10 +28,46 @@
   color: #6c6b6b;
 }
 
-.container {
-  height :500px;
+// ---------------------------------
+// sign_up sign_in　のbackground-image編集
+
+#bg_img {
+  background-image: image-url("0.jpeg");
+  background-position: center;
+  background-size: cover;
+  height :750px;
 }
 
-// .theTarget {
-//   height :500px;
+// ---------------------------------
+// 全ての submit（input） フォームを編集
+
+input {
+  background-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+}
+
+input:focus-visible {
+  outline-width: 1px;
+  outline-style: solid;
+}
+
+// ---------------------------------
+// TOPにバックする為のボタン編集
+
+#back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+#back img {
+  width: 50px;
+}
+
+// ---------------------------------
+// ロゴ編集
+
+// .logo {
+//   font-size: 100%;
+//   color: rgba(0, 0, 0, 0.5);
 // }
