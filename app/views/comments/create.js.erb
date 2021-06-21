@@ -1,3 +1,4 @@
 $(".comment-count").html("コメント数: <%= @content.comments.count %>");
+
 $(".comment-index").html("<%= j(render partial: 'comments/c_comment', locals: {content: @content}) %>");
 $(".textarea1").val('');

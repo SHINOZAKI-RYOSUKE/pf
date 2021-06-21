@@ -1,28 +1,74 @@
-<div class="container">
+<div class="container-fluid">
+
   <div class="row">
-    <div class="col-12 my-5">
-      <div class="text-center" style="font-size: 100%;">
+    <h1 class="col-12 text-center mb-5">Comments</h1>
+  </div>
 
+  <div class="row">
 
-
-        <h1>Comments</h1>
-        
-        <div><%= attachment_image_tag @content, :content_image, :fill, 350, 300, format: 'jpg' %></div>
-        
-        <div class="comment-form">
-        <%= form_with(model:[@content, @c_comment], remote: true) do |f| %>
-          <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに", class:"textarea1" %>
-          <%= f.submit "送信する" %>
+    <div class="col-1 text-center">
+      <div class="side_left">
+        <%= link_to new_content_path do %>
+        <i class="far fa-plus-square fa-3x"></i>
         <% end %>
-        </div>
-        
-        <div class="comment-index">
-          <%= render 'comments/c_comment',content: @content %>
-        </div>
-
-
-
       </div>
     </div>
+
+
+
+
+    <div class="col-5">
+      <div class="text-center">
+        <div class="mb-5">
+
+        <div><%= attachment_image_tag @content, :content_image, :fill, 800, 500, format: 'jpg', class: "content-image" %></div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-5">
+      <div class="text-center">
+        <div class="mb-5">
+          <div class="comment-form">
+
+          <%= form_with(model:[@content, @c_comment], remote: true) do |f| %>
+            <%= f.text_area :comment, size: "10x7",placeholder: "コメントをここに", class: "form-control" %>
+            <%= f.submit "送信する", class: "mt-3 w-100 btn btn-outline-info" %>
+          <% end %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="side_right col-1 text-center">
+      <span id="back">
+        <a href="#">
+          <i class="fas fa-angle-double-up fa-3x"></i>
+        </a>
+      </span>
+    </div>
+
   </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      
+      <div class="col-1"></div>
+
+        <div class="col-10 px-0">
+          <div class="comment-index">
+            <%= render 'comments/c_comment',content: @content %>
+          </div>
+        </div>
+
+      <div class="col-1"></div>
+
+    </div>
+  </div>
+
 </div>

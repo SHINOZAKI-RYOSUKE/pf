@@ -1,14 +1,21 @@
-<% content.comments.each do |c_comment| %>
+<% content.comments.order(created_at: :desc).each do |c_comment| %>
 
-  <%= link_to user_path(c_comment.user.id), class: 'link' do %>
-    <div><%= attachment_image_tag c_comment.user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "0.jpeg", class: "user-image" %></div>
-    <div><%= c_comment.user.name %></div>
-  <% end %>
-
-  <%= c_comment.comment %>
-
-  <% if current_user.id == c_comment.user.id %>
-    <div><%= link_to "削除する", content_comment_path(c_comment.content_id, c_comment), method: :delete, data: { confirm: '本当に削除しますか？' } %></div>
-  <% end %>
+  <div class="card d-flex flex-row justify-content-between align-items-center mb-3">
+    <%= link_to user_path(c_comment.user.id), class: 'link' do %>
+      <div class="p-2 ml-3">
+        <%= attachment_image_tag c_comment.user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "0.jpeg", class: "user-image" %>
+      </div>
+    <% end %>
+    
+    <div class="p-2"><%= c_comment.user.name %></div>
+  
+    <div class="p-2"><%= c_comment.comment %></div>
+    
+    <div class="p-2 mr-3">
+      <% if current_user.id == c_comment.user.id %>
+        <%= link_to "削除する", content_comment_path(c_comment.content_id, c_comment), method: :delete, class: "btn btn-outline-secondary text-nowrap", data: { confirm: '本当に削除しますか？' } %>
+      <% end %>
+    </div>
+  </div>
 
 <% end %>
