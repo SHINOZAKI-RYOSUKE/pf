@@ -18,3 +18,17 @@
    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
    transform: translateY(-2px);
  }
+
+
+.user-image2 {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.user-image2:hover {
+   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+   transform: translateY(-2px);
+ }

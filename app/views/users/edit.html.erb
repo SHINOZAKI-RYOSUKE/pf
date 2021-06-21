@@ -1,41 +1,66 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-12 my-5">
-      <div class="text-center" style="font-size: 100%;">
+
+    <div class="col-1 text-center">
+      <div class="side_left">
+        <%= link_to new_content_path do %>
+        <i class="far fa-plus-square fa-3x"></i>
+        <% end %>
+      </div>
+    </div>
 
 
 
-        <h1>User Config</h1>
-        
+
+    <div class="col-10">
+      <div class="text-center">
+
+        <h1 class="mb-5">Users</h1>
+
+
+        <div class="p-2">
+          <%= attachment_image_tag @user, :profile_image, :fill, 300, 300, format: 'jpg', fallback: "0.jpeg", class: "user-image2", style: "border-style: none;", id: "preview_image" %>
+        </div>
+
         <%= form_with model:@user, local:true do |f| %>
-        <div class="form-group">
-          <label for="user_name">Name</label>
-            <%= f.text_field :name %>
+
+
+        <div>Image</div>
+        <div class="mb-5 custom-file">
+          <label class="custom-file-label" for="customFile">画像を選択...</label>
+          <%= f.attachment_field :profile_image,class: "custom-file-input"  %>
         </div>
-        
-        <div class="form-group">
-          <label for="user_image">Image</label>
-            <%= f.attachment_field :profile_image %>
-        </div>
-        
-        <div class="form-group">
+
+        <div class="mb-5 form-group">
           <label for="user_introduction">Introduction</label>
-            <%= f.text_field :introduction %>
+            <%= f.text_field :introduction, size: "30x2",placeholder: "コメントをここに", class: "form-control" %>
         </div>
-        
-        <div class="form-group">
+
+        <div class="mb-5 form-group">
           <label for="user_greeting">Greeting</label>
-            <%= f.text_field :greeting %>
+            <%= f.text_field :greeting, size: "15x1",placeholder: "コメントをここに", class: "form-control" %>
         </div>
-        
-        <div class="form-group">
+
+        <div class="mb-5 form-group">
           <%= f.submit 'Update User' %>
         </div>
       　<% end %>
 
 
-
       </div>
     </div>
+
+
+
+
+    <div class="side_right col-1 text-center">
+      <span id="back">
+        <a href="#">
+          <i class="fas fa-angle-double-up fa-3x mr-3"></i>
+        </a>
+      </span>
+    </div>
+
   </div>
 </div>
+
