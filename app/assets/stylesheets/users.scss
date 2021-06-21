@@ -19,6 +19,8 @@
    transform: translateY(-2px);
  }
 
+// ----------------------------
+// Userアイコン用（preview_image）
 
 .user-image2 {
   width: 160px;
@@ -31,4 +33,12 @@
 .user-image2:hover {
    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
    transform: translateY(-2px);
+ }
+
+ // ----------------------------
+// 編集フォーム用
+
+ .edit_items {
+   width: 40%;
+   margin: auto;
  }
