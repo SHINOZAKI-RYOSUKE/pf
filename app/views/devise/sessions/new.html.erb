@@ -1,6 +1,6 @@
 <div id="bg_img">
-  <div class="row">
-    <div class="col-12 my-5">
+  <div class="row justify-content-center">
+    <div class="col-2 my-5">
       <div class="text-center">
 
 
@@ -16,12 +16,12 @@
         
             <div class="field mt-5">
               <%= f.label :name %><br />
-              <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
             </div>
           
             <div class="field mt-4">
               <%= f.label :password %><br />
-              <%= f.password_field :password, autocomplete: "current-password" %>
+              <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
             </div>
           
             <% if devise_mapping.rememberable? %>
@@ -32,7 +32,7 @@
             <% end %>
           
             <div class="actions mt-5">
-              <%= f.submit "     Log in >>     " %>
+              <%= f.submit "Log in >>", class: "btn btn-outline-secondary" %>
             </div>
             
             
