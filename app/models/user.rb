@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :contents
   has_many :comments
   has_many :favorites
+  has_many :favorite_contents, through: :favorites, source: :content
   has_many :chats
   has_many :user_rooms
   has_many :rooms, through: :user_rooms
