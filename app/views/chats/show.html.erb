@@ -1,4 +1,12 @@
 <div class="container-fluid">
+  
+  <div class="row">
+    <h1 class="col-12 text-center mb-3">Chats</h1>
+    <h4 id="room" data-room="<%= @room.id %>" class="col-12 text-center mb-5" data-user="<%= current_user.id %>">
+      <%= @user.name %> さんとのチャット
+    </h4>
+  </div>
+  
   <div class="row">
 
     <div class="col-1 text-center">
@@ -11,30 +19,26 @@
 
 
 
-      <div class="col-10">
+    <div class="col-10">
 
+      <%= form_with model: @chat do |f| %>
 
+        <div class="d-flex flex-row justify-content-center mb-4">
+          <div class="card form-group">
+            <%= f.text_area :message, :size=>"90x1", placeholder: "コメント（MAX:5000）", class: "form-control" %>
+            <%= f.hidden_field :room_id %>
+          </div>
+          
+          <div class="form-group ml-4">
+            <%= f.submit 'Post >>', class: "btn btn-outline-success" %>
+          </div>
+        </div>
 
+      <% end %>
 
-        <h1>Chats</h1>
+      <div><%= paginate @chats %></div>
 
-        <h3 id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>"><%= @user.name %> さんとのチャット</h3>
-
-        <%= form_with model: @chat do |f| %>
-          <div><%= f.text_field :message %></div>
-          <div><%= f.hidden_field :room_id %></div>
-          <div><%= f.submit %></div>
-        <% end %>
-
-        <div><%= paginate @chats %></div>
-
-
-
-
-
-      </div>
-
-
+    </div>
 
 
 
@@ -48,8 +52,6 @@
 
   </div>
 
-
-
   <div class="container-fluid">
     <div class="row">
 
@@ -58,7 +60,7 @@
         <div class="col-10 px-0">
           <div class="message-index">
 
-            <div class="message">
+            <div class="message mb-5">
               <%= render partial:'chats/message',collection: @chats,as:"chat" %>
               <%# collection: @chats　で　@chats個　分繰り返してる。 %>
               <%# @chats,as:"chat"　は、@chat に chat を入れている。 %>
@@ -72,7 +74,5 @@
 
     </div>
   </div>
-
-
 
 </div>
