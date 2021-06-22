@@ -9,6 +9,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @contents_reverse = @user.contents.order(created_at: :desc)
+    @favorite_contents_reverse = @user.favorite_contents.order(created_at: :desc)
   end
 
   def edit

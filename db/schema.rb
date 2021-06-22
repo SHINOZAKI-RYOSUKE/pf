@@ -13,39 +13,39 @@
 ActiveRecord::Schema.define(version: 2021_06_15_064238) do
 
   create_table "chats", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "room_id"
-    t.text "message"
+    t.integer "user_id", null: false
+    t.integer "room_id", null: false
+    t.text "message", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "content_id"
-    t.text "comment"
+    t.integer "user_id", null: false
+    t.integer "content_id", null: false
+    t.text "comment", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "contents", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.string "content_image_id"
-    t.text "description"
+    t.text "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "content_id"
+    t.integer "user_id", null: false
+    t.integer "content_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "relationships", force: :cascade do |t|
-    t.integer "following_id"
-    t.integer "follower_id"
+    t.integer "following_id", null: false
+    t.integer "follower_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 2021_06_15_064238) do
   end
 
   create_table "user_rooms", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "room_id"
+    t.integer "user_id", null: false
+    t.integer "room_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2021_06_15_064238) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "name"
+    t.string "name", null: false
     t.string "profile_image_id"
     t.text "introduction"
     t.string "greeting"

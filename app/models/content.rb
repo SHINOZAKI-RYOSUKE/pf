@@ -18,7 +18,7 @@ class Content < ApplicationRecord
 # validates----------------------------------
 	validates :description, 
 	  presence: true, 
-	  length: { maximum: 200 }
+	  length: { maximum: 300 }
 
 
 end

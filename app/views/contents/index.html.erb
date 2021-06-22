@@ -29,7 +29,7 @@
             <% end %>
 
             <div class="card_show d-flex flex-row">
-              <%= link_to content_path(content.id) do %>
+              <%= link_to user_path(content.user.id) do %>
                 <div class="p-2 card_item1">
                   <%= attachment_image_tag content.user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "0.jpeg", class: "user-image", style: "border-style: none;" %>
                 </div>
@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="pb-2 px-2 card_item">
-                  <%= content.description.truncate(33) %>
+                  <%= content.description.truncate(30) %>
                 </div>
               </div>
 
@@ -70,7 +70,7 @@
             <%= link_to content_path(content.id), class: "card_image" do %>
               <div><%= attachment_image_tag content, :content_image, :fill, 800, 500, format: 'jpg', class: "content-image" %></div>
             <% end %>
-            
+
             <div class="card_show d-flex flex-row">
               <%= link_to content_path(content.id) do %>
                 <div class="p-2 card_item1">
@@ -90,12 +90,12 @@
                 </div>
 
                 <div class="pb-2 px-2 card_item">
-                  <%= content.description.truncate(33) %>
+                  <%= content.description.truncate(30) %>
                 </div>
               </div>
-              
+
              </div>
-             
+
           </div>
         <% end %>
 

@@ -1,11 +1,11 @@
 <div id="bg_img">
   <div class="row justify-content-center">
     <div class="col-2 my-5">
-      <div class="text-center">
+      <div class="text-center text-nowrap">
 
 
 
-        <div class="row mx-4">
+        <div class="row mx-4 mb-5">
           <div class="col">
             <h4 class="page-title">Log in</h4>
           </div>
@@ -13,19 +13,18 @@
         
         <%= form_with model: @user, url: user_session_path, local: true do |f| %>
         
-        
-            <div class="field mt-5">
-              <%= f.label :name %><br />
+            <div class="mb-2">Name</div>
+            <div class="card field">
               <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
             </div>
           
-            <div class="field mt-4">
-              <%= f.label :password %><br />
+            <div class="mb-2 mt-5">Password</div>
+            <div class="card field">
               <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
             </div>
           
             <% if devise_mapping.rememberable? %>
-              <div class="field mt-4">
+              <div class="field">
                 <%= f.check_box :remember_me %>
                 <%= f.label :remember_me %>
               </div>
