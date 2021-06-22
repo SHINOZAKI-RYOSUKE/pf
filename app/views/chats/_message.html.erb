@@ -1,0 +1,37 @@
+  <% if chat.user_id == current_user.id %>
+
+    <div class="my_message d-flex flex-row justify-content-end py-2">
+      <div>
+        <div class="text_message card px-4 py-2 mr-3">
+          <%= chat.message %>
+        </div>
+        <div class="sent_time mx-3">
+          <div class="time_date"><%= chat.created_at %></div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+
+  <% else %>
+
+    <div class="partner_message d-flex flex-row py-2">
+      <div class="d-flex align-content-center">
+        <%= link_to user_path(chat.user.id) do %>
+          <div class=" card_item1">
+            <%= attachment_image_tag chat.user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "0.jpeg", class: "user-image", style: "border-style: none;" %>
+          </div>
+        <% end %>
+      </div>
+      <div>
+        <div class="text_message card px-4 py-2 ml-3">
+          <%= chat.message %>
+        </div>
+        <div class="sent_time mx-3 d-flex justify-content-end">
+          <div class="time_date"><%= chat.created_at %></div>
+        </div>
+      </div>
+    </div>
+
+  <% end %>

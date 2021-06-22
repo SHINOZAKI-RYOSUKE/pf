@@ -29,6 +29,7 @@ class ChatsController < ApplicationController
   def create
     @chat = current_user.chats.new(chat_params)
     @chat.save
+    @chats = @chat.room.chats.page(params[:page]).reverse_order
   end
 
 

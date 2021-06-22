@@ -1,6 +1,6 @@
 class ContentsController < ApplicationController
   # TOPページと詳細ページはログイン前でも閲覧のみ可能。
-  before_action :authenticate_user!, except:[:index, :show]
+  before_action :authenticate_user!, except:[:index]
   
   
   def index

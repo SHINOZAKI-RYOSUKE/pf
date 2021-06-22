@@ -7,7 +7,7 @@ class Chat < ApplicationRecord
 # validates-----------------------------------
   validates :message,
     presence: true,
-    length: { maximum: 300 }
+    length: { maximum: 5000 }
 
 
 end

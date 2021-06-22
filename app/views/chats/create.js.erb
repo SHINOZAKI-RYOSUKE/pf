@@ -1,2 +1,2 @@
-$('.message').prepend("<p style='text-align: right;'><%= @chat.message %></p>");<%# appendが最後に追加・prependが最初に追加%>
+$(".message").prepend("<%= j(render partial: 'chats/message', locals: {chat: @chat}) %>")
 $('input[type=text]').val('')
