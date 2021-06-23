@@ -14,8 +14,41 @@
 
     <div class="col-10">
       <div class="text-center">
-        <div class="card mb-5">
+        
+        <h1 class="mb-5">Content Show</h1>
+        
+        <div>
+            <div class="card_item1 pt-2 justify-content-center">
+              
+              <%= link_to user_path(@content.user.id) do %>
+                <div class="card_item1">
+                  <%= attachment_image_tag @content.user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "0.jpeg", class: "user-image", style: "border-style: none;" %>
+                </div>
+              <% end %>
+              
+              <h3 class="mb-3">
+                <%= @content.user.name %>
+              </h3>
 
+              <div class="content_action mb-3">
+                <div>
+                  <% if current_user != @content.user %>
+                    <% if @content.user.followed_by?(current_user) %>
+                      <%= link_to "フォロー解除", user_relationships_path(@content.user.id), method: :delete, class: "btn btn-outline-secondary w-100" %>
+                    <% else %>
+                      <%= link_to "フォローする", user_relationships_path(@content.user.id), method: :post, class: "btn btn-info w-100" %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+        
+        
+        <div class="card mb-5 pb-3">
+          
           <div>
             <%= attachment_image_tag @content, :content_image, :fill, 800, 500, format: 'jpg', class: "content-image" %>
             <div class="card_item1 d-flex pl-2 pt-2">
@@ -29,60 +62,35 @@
               </div>
           </div>
 
-          <div class="card_show">
-            <%= link_to user_path(@content.user.id) do %>
-              <div class="card_item1">
-                <%= attachment_image_tag @content.user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "0.jpeg", class: "user-image", style: "border-style: none;" %>
-              </div>
-            <% end %>
-
-            <div>
-              <div class="card_item1 pt-2 justify-content-center">
-                <h3 class="mb-3">
-                  <%= @content.user.name %>
-                </h3>
-
-                <div class="content_action">
-                  <div>
-                    <% if current_user != @content.user %>
-                      <% if @content.user.followed_by?(current_user) %>
-                        <%= link_to "フォロー解除", user_relationships_path(@content.user.id), method: :delete, class: "btn btn-outline-secondary w-100" %>
-                      <% else %>
-                        <%= link_to "フォローする", user_relationships_path(@content.user.id), method: :post, class: "btn btn-info w-100" %>
-                      <% end %>
-                    <% end %>
-                  </div>
-
-                  <div class="my-3">
-                    <%= link_to 'Comment +', content_comments_path(@content), class: "btn btn-outline-info w-100" %>
-                  </div>
-
-                  <% if current_user.id == @content.user_id %>
-                  <div class="mt-4">
-                    <%= link_to "変更する", edit_content_path(@content), class: "btn btn-outline-info w-100" %>
-                  </div>
-
-                  <div class="mt-2">
-                    <%= link_to "削除する", content_path, class: "btn btn-outline-secondary w-100", method: :delete, data: { confirm: '本当に削除しますか？' } %>
-                  </div>
-                  <% end %>
-                </div>
-              </div>
-
-
-
-              <div class="card mx-5 my-5 px-5 py-3">
-                <div class="px-2">
-                  <%= @content.description %>
-                </div>
-              </div>
-
-
+          <div class="card mx-5 mb-3 px-3 py-2">
+            <div class="px-2">
+              <%= @content.description %>
             </div>
           </div>
 
-
+          <div class="d-flex justify-content-center">
+            <div class="my-3">
+              <%= link_to 'Comment +', content_comments_path(@content), class: "btn btn-outline-info w-100" %>
+            </div>
+          </div>
+          
+          <div class="content_action">
+            <% if current_user.id == @content.user_id %>
+            <div>
+              <%= link_to "変更する", edit_content_path(@content), class: "btn btn-outline-info w-100" %>
+            </div>
+  
+            <div class="mt-2">
+              <%= link_to "削除する", content_path, class: "btn btn-outline-secondary w-100", method: :delete, data: { confirm: '本当に削除しますか？' } %>
+            </div>
+            <% end %>
+          </div>
+          
+          
         </div>
+        
+        
+        
       </div>
     </div>
 
