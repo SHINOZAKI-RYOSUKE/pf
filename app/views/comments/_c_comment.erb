@@ -6,14 +6,14 @@
         <%= attachment_image_tag c_comment.user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "0.jpeg", class: "user-image" %>
       </div>
     <% end %>
-    
+
     <div class="p-2"><%= c_comment.user.name %></div>
-  
+
     <div class="p-2"><%= c_comment.comment %></div>
-    
+
     <div class="p-2 mr-3">
       <% if current_user.id == c_comment.user.id %>
-        <%= link_to "削除する", content_comment_path(c_comment.content_id, c_comment), method: :delete, class: "btn btn-outline-secondary text-nowrap", data: { confirm: '本当に削除しますか？' } %>
+        <%= link_to "削除する", content_comment_path(c_comment.content_id, c_comment), remote: true, method: :delete, class: "btn btn-outline-secondary text-nowrap", data: { confirm: '本当に削除しますか？' } %>
       <% end %>
     </div>
   </div>

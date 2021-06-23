@@ -25,7 +25,6 @@ class CommentsController < ApplicationController
     @comments = Comment.all
     content_comment = @content.comments.find(params[:id])
     content_comment.destroy
-    redirect_to content_comments_path(@content), notice:"You have destroy comment successfully."
   end
 
 
