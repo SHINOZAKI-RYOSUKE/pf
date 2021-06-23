@@ -1,2 +1,66 @@
-<h1>Favorites#index</h1>
-<p>Find me in app/views/favorites/index.html.erb</p>
+<div class="container-fluid">
+  <div class="row">
+    
+    <div class="col-2 text-center">
+      <div class="side_left">
+        <%= link_to new_content_path do %>
+        <i class="far fa-plus-square fa-3x"></i>
+        <% end %>
+      </div>
+    </div>
+
+
+
+
+    <div class="col-8">
+      <div class="text-center">
+        
+        <h1 class="mb-5">Favorites</h1>
+        <% @content.favorites.each do |favo| %>
+          <div class="card d-flex flex-row justify-content-between align-items-center mb-3">
+            
+            <%= link_to user_path(favo.user.id), class: 'd-flex flex-row' do %>
+              <div class="p-2 ml-3">
+                <%= attachment_image_tag favo.user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "0.jpeg", class: "user-image", style: "border-style: none;" %>
+              </div>
+            <% end %>
+            
+            <div class="p-2">
+              <%= favo.user.name %>
+            </div>
+            
+            <div class="p-2">
+              <%= favo.user.greeting %>
+            </div>
+            
+            <div class="p-2 mr-3">
+              <% if current_user != favo.user %>
+                <% if favo.user.followed_by?(current_user) %>
+                  <%= link_to "フォロー解除", user_relationships_path(favo.user.id), method: :delete, class: "btn btn-outline-secondary" %>
+                <% else %>
+                  <%= link_to "フォローする", user_relationships_path(favo.user.id), method: :post, class: "btn btn-info" %>
+                <% end %>
+              <% end %>
+            </div>
+ 
+ 
+            
+          </div>
+        <% end %>
+          
+      </div>
+    </div>
+
+
+
+
+    <div class="side_right col-2 text-center">
+      <span id="back">
+        <a href="#">
+          <i class="fas fa-angle-double-up fa-3x"></i>
+        </a>
+      </span>
+    </div>
+
+  </div>
+</div>

@@ -2,9 +2,57 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// ----------------------------
+// Userアイコン用
+
 .user-image {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
   border-radius: 50%;
+  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
 }
+
+ .user-image:hover {
+   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+   transform: translateY(-2px);
+ }
+
+// ----------------------------
+// Userアイコン用（preview_image）
+
+.user-image2 {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.user-image2:hover {
+   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+   transform: translateY(-2px);
+ }
+
+// ----------------------------
+// 編集フォーム用
+
+ .edit_items {
+   width: 40%;
+   margin: auto;
+ }
+
+// ----------------------------
+// introduction の幅調整
+
+ .user_introduction {
+   width: 50%;
+   margin: 0 auto;
+ }
+
+
+// .profile_image_1 {
+//   width: 10%;
+//   margin: 0 auto;
+// }

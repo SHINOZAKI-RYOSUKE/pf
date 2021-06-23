@@ -1,2 +1,78 @@
-<h1>Chats#show</h1>
-<p>Find me in app/views/chats/show.html.erb</p>
+<div class="container-fluid">
+  
+  <div class="row">
+    <h1 class="col-12 text-center mb-3">Chats</h1>
+    <h4 id="room" data-room="<%= @room.id %>" class="col-12 text-center mb-5" data-user="<%= current_user.id %>">
+      <%= @user.name %> さんとのチャット
+    </h4>
+  </div>
+  
+  <div class="row">
+
+    <div class="col-1 text-center">
+      <div class="side_left">
+        <%= link_to new_content_path do %>
+        <i class="far fa-plus-square fa-3x"></i>
+        <% end %>
+      </div>
+    </div>
+
+
+
+    <div class="col-10">
+
+      <%= form_with model: @chat do |f| %>
+
+        <div class="d-flex flex-row justify-content-center mb-4">
+          <div class="card form-group">
+            <%= f.text_area :message, :size=>"90x1", placeholder: "コメント（MAX:5000）", class: "form-control" %>
+            <%= f.hidden_field :room_id %>
+          </div>
+          
+          <div class="form-group ml-4">
+            <%= f.submit 'Post >>', class: "btn btn-outline-success" %>
+          </div>
+        </div>
+
+      <% end %>
+
+      <div><%= paginate @chats %></div>
+
+    </div>
+
+
+
+    <div class="side_right col-1 text-center">
+      <span id="back">
+        <a href="#">
+          <i class="fas fa-angle-double-up fa-3x mr-3"></i>
+        </a>
+      </span>
+    </div>
+
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-1"></div>
+
+        <div class="col-10 px-0">
+          <div class="message-index">
+
+            <div class="message mb-5">
+              <%= render partial:'chats/message',collection: @chats,as:"chat" %>
+              <%# collection: @chats　で　@chats個　分繰り返してる。 %>
+              <%# @chats,as:"chat"　は、@chat に chat を入れている。 %>
+              <%# SQL文を少なくするように .prepend  を採用している。 %>
+            </div>
+
+          </div>
+        </div>
+
+      <div class="col-1"></div>
+
+    </div>
+  </div>
+
+</div>

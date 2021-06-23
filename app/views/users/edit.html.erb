@@ -1,2 +1,82 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-1 text-center">
+      <div class="side_left">
+        <%= link_to new_content_path do %>
+        <i class="far fa-plus-square fa-3x"></i>
+        <% end %>
+      </div>
+    </div>
+
+
+
+
+    <div class="col-10">
+      <div class="edit_items text-center">
+
+        <h1 class="mb-5">Users</h1>
+
+
+        <div class="p-2">
+          <%= attachment_image_tag @user, :profile_image, :fill, 300, 300, format: 'jpg', fallback: "0.jpeg", class: "user-image2", style: "border-style: none;", id: "preview_image" %>
+        </div>
+
+        <%= form_with model:@user, local:true do |f| %>
+
+
+        <div class="mb-2">Image</div>
+        <div class="card mb-5 custom-file">
+          <label class="custom-file-label" for="customFile">画像を選択...</label>
+          <%= f.attachment_field :profile_image,class: "custom-file-input"  %>
+        </div>
+
+        <div class="mb-2">Introduction</div>
+        <div class="card mb-5 form-group">
+            <%= f.text_area :introduction, :size=>"30x5", placeholder: "自己紹介（MAX:300）", class: "form-control" %>
+        </div>
+
+        <div class="mb-2">greeting</div>
+        <div class="card mb-5 form-group">
+            <%= f.text_field :greeting, placeholder: "ひとこと（MAX:20）", class: "form-control" %>
+        </div>
+
+        <div class="mb-5 form-group">
+          <%= f.submit 'Update User', class: "btn btn-outline-success" %>
+        </div>
+      　<% end %>
+
+
+      </div>
+    </div>
+
+
+
+
+    <div class="side_right col-1 text-center">
+      <span id="back">
+        <a href="#">
+          <i class="fas fa-angle-double-up fa-3x mr-3"></i>
+        </a>
+      </span>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+<%# jsに書き込むとなぜかうまくいかないのでここに記述する %>
+<script>
+  $('#user_profile_image').on('change', function (e) {
+
+      var reader = new FileReader();
+      reader.onload = function (e) {
+          $("#preview_image").attr('src', e.target.result);
+      }
+      reader.readAsDataURL(e.target.files[0]);
+  });
+</script>

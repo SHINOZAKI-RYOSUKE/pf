@@ -18,17 +18,71 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+// ---------------------------------
+// リセットCSS
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: #6c6b6b;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
-.container {
-  height :500px;
+// ---------------------------------
+// sign_up sign_in　のbackground-image編集
+
+#bg_img {
+  background-image: image-url("0.jpeg");
+  background-position: center;
+  background-size: cover;
+  height :750px;
 }
 
-// .theTarget {
-//   height :500px;
-// }
+// ---------------------------------
+// TOPにバックする為のボタン編集
+
+#back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+#back img {
+  width: 50px;
+}
+
+// ---------------------------------
+// リンクに対して下線編集
+ 
+a,
+a:hover{
+  text-decoration: none !important;
+}
+
+// ------------------------------
+// サイドバー（左）の固定編集
+
+.side_left {
+  position: -webkit-fixed;
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  margin: 0;
+  line-height: 3;
+}
+
+// ------------------------------
+// cardマウスホバー時のシャドー等
+
+.card {
+  // border: none !important;
+  background-color: transparent;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.card:hover {
+   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+   transform: translateY(-2px);
+ }
+ 

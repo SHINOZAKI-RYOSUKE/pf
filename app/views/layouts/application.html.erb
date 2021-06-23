@@ -9,13 +9,19 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
+
+
   <body>
-    
+
     <header class="sticky-top">
       <nav class="navbar navbar-expand-lg navbar-light mb-4">
-        <%= link_to "Re:room", root_path %>
-       
-     
+        
+        <ul class="navbar-nav">
+          <li class="nav-item mx-2"><%= link_to "Re:room", root_path, class: "nav-link" %></li>
+        </ul>
+
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,13 +42,17 @@
             <% end %>
           </ul>
         </div>
+        
       </nav>
     </header>
-    
+
     <main>
+      <div class=" text-center">
+        <p id="notice"><%= notice %></p>
+      </div>
       <%= yield %>
     </main>
-    
+
 
   </body>
 </html>
