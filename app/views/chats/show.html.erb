@@ -23,8 +23,8 @@
 
       <%= form_with model: @chat do |f| %>
 
-        <div class="d-flex flex-row justify-content-center mb-4">
-          <div class="card form-group">
+        <div class="d-flex justify-content-center mb-4">
+          <div class="form-group card">
             <%= f.text_area :message, :size=>"90x1", placeholder: "コメント（MAX:5000）", class: "form-control" %>
             <%= f.hidden_field :room_id %>
           </div>
@@ -58,15 +58,11 @@
       <div class="col-1"></div>
 
         <div class="col-10 px-0">
-          <div class="message-index">
-
-            <div class="message mb-5">
-              <%= render partial:'chats/message',collection: @chats,as:"chat" %>
-              <%# collection: @chats　で　@chats個　分繰り返してる。 %>
-              <%# @chats,as:"chat"　は、@chat に chat を入れている。 %>
-              <%# SQL文を少なくするように .prepend  を採用している。 %>
-            </div>
-
+          <div class="message mb-5">
+            <%= render partial:'chats/message',collection: @chats,as:"chat" %>
+            <%# collection: @chats　で　@chats個　分繰り返してる。 %>
+            <%# @chats,as:"chat"　は、@chat に chat を入れている。 %>
+            <%# SQL文を少なくするように .prepend  を採用している。 %>
           </div>
         </div>
 

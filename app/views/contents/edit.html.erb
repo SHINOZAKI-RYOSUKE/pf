@@ -15,24 +15,23 @@
     <div class="col-10">
 
 
-
       <div class="edit_items text-center">
         <h1 class="mb-5">Re Post</h1>
         <%= form_with model: @content, local:true do |f| %>
 
         <div class="mb-2">Post Image</div>
 
-        <div class="card mb-5 custom-file">
+        <div class="card custom-file mb-5">
           <label class="custom-file-label" for="customFile">画像を選択...</label>
           <%= f.attachment_field :content_image, class: "custom-file-input" %>
         </div>
 
         <div class="mb-2">Introduction</div>
-        <div class="card mb-5 form-group">
+        <div class="card form-group mb-5">
             <%= f.text_area :description, :size=>"30x5", placeholder: "コメント（MAX:300）", class: "form-control" %>
         </div>
 
-        <div class="mb-5 form-group">
+        <div class="form-group mb-5 ">
           <%= f.submit 'Update', class: "btn btn-outline-success" %>
         </div>
 
@@ -44,7 +43,6 @@
           <%= attachment_image_tag @user, :content_image, :fill, 800, 500, format: 'jpg', fallback: "0.jpeg", class: "content-image2", style: "border-style: none;", id: "preview_image" %>
         </div>
       </div>
-
 
 
     </div>

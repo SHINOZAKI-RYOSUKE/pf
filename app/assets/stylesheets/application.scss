@@ -18,9 +18,8 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-// ---------------------------------
+// ---------------------------------APPLICATION---------------------------------
 // リセットCSS
-
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +30,6 @@
 
 // ---------------------------------
 // sign_up sign_in　のbackground-image編集
-
 #bg_img {
   background-image: image-url("0.jpeg");
   background-position: center;
@@ -40,8 +38,14 @@
 }
 
 // ---------------------------------
-// TOPにバックする為のボタン編集
+// リンクに対して下線編集
+a,
+a:hover{
+  text-decoration: none !important;
+}
 
+// ---------------------------------
+// サイドバー（右:post）の固定編集
 #back {
   position: fixed;
   right: 20px;
@@ -51,17 +55,8 @@
   width: 50px;
 }
 
-// ---------------------------------
-// リンクに対して下線編集
- 
-a,
-a:hover{
-  text-decoration: none !important;
-}
-
 // ------------------------------
-// サイドバー（左）の固定編集
-
+// サイドバー（左:top back）の固定編集
 .side_left {
   position: -webkit-fixed;
   position: fixed;
@@ -73,7 +68,6 @@ a:hover{
 
 // ------------------------------
 // cardマウスホバー時のシャドー等
-
 .card {
   // border: none !important;
   background-color: transparent;
@@ -85,4 +79,106 @@ a:hover{
    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
    transform: translateY(-2px);
  }
+
+
+// -----------------------------------USER-----------------------------------
+// Userアイコン用
+.user-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+}
+
+ .user-image:hover {
+   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+   transform: translateY(-2px);
+ }
+
+// ----------------------------
+// Userアイコン用（preview_image）
+.user-image2 {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.user-image2:hover {
+   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+   transform: translateY(-2px);
+ }
+
+// ----------------------------
+// 編集フォーム用
+ .edit_items {
+   width: 40%;
+   margin: auto;
+ }
+
+// ----------------------------
+// introduction の幅調整
+ .user_introduction {
+   width: 50%;
+   margin: 0 auto;
+   padding: 10px;
+ }
+
+
+// ---------------------------------CONTENT---------------------------------
+// 
+.content-image {
+  width: 100%;
+  height: 60%;
+}
+
+// -----------------------
+// 新規投稿　用イメージ編集
+
+.content-image2 {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.content-image2:hover {
+   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+   transform: translateY(-2px);
+ }
  
+// -----------------------
+// content(show/btn/follow)用編集
+ .content_action {
+   width: 30%;
+   margin: 0 auto;
+ }
+
+
+// ----------------------------------CHAT------------------------------------
+// chat(show/自分のメッセ)編集
+.my_message {
+  margin-left: 20% ;
+}
+
+// -----------------------
+// chat(show/相手のメッセ)編集
+.partner_message {
+  margin-right: 20% ;
+}
+
+// -----------------------
+// chat(show/投稿日時)編集
+.sent_time {
+  font-size: 12px;
+}
+
+// -----------------------
+// chat(show/投稿メッセの表示の仕方)編集
+.text_message {
+  word-break: break-all;
+  // white-space: pre-wrap;
+  // text-indent:0px;
+}

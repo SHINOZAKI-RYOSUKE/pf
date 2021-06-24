@@ -7,9 +7,13 @@
       </div>
     <% end %>
 
-    <div class="p-2"><%= c_comment.user.name %></div>
+    <div class="p-2">
+      <%= c_comment.user.name %>
+    </div>
 
-    <div class="p-2"><%= c_comment.comment %></div>
+    <div class="card p-2 m-2">
+      <%= c_comment.comment %>
+    </div>
 
     <div class="p-2 mr-3">
       <% if current_user.id == c_comment.user.id %>
