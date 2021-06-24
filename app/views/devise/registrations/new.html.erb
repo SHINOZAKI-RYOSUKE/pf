@@ -4,33 +4,31 @@
       <div class="text-center text-nowrap">
 
 
-
-        <div class="row mx-4 mb-5">
-          <div class="col">
-            <h4 class="page-title">Sign up</h4>
-          </div>
+        <div class="mx-4 mb-5">
+          <h4>Sign up</h4>
         </div>
 
         <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-          <%= render "devise/shared/error_messages", resource: resource %>
+
+            <%= render "devise/shared/error_messages", resource: resource %>
 
             <div class="mb-2">Name</div>
-            <div class="card mb-5 form-group">
+            <div class="form-group card mb-5">
               <%= f.text_field :name, autofocus: true, placeholder: "ユーザー名", class: "form-control" %>
             </div>
 
             <div class="mb-2">Email</div>
-            <div class="card mb-5 form-group">
+            <div class="form-group card mb-5">
               <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com", class: "form-control" %>
             </div>
 
             <div class="mb-2">Password</div>
-            <div class="card mb-5 form-group">
+            <div class="form-group card mb-5">
               <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class: "form-control" %>
             </div>
 
             <div class="mb-2">Password</div>
-            <div class="card mb-5 form-group">
+            <div class="form-group card mb-5">
               <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "(再確認)", class: "form-control" %>
             </div>
 
@@ -38,10 +36,7 @@
               <%= f.submit "Sign up >>", class: "btn btn-outline-secondary" %>
             </div>
 
-
         <% end %>
-
-
 
 
       </div>

@@ -5,25 +5,25 @@
     <h1 class="col-12 text-center mb-5">My page</h1>
   </div>
 
-  <div class="card pt-4 row">
+  <div class="row card pt-4">
     <div class="col-12 text-center mb-5 px-5">
 
       <div><%= attachment_image_tag @user, :profile_image, :fill, 300, 300, format: 'jpg', fallback: "0.jpeg", class: "user-image2" %></div>
 
       <h3><%= @user.name %></h3>
 
-      <div class="user_introduction mb-2 py-3 card"><%= @user.introduction %></div>
+      <div class="user_introduction card mb-2 py-3 px-5"><%= @user.introduction %></div>
 
       <div class="following">
         フォロー数：
-        <%= link_to user_relationships_path(@user.id), class: 'link' do %>
+        <%= link_to user_relationships_path(@user.id) do %>
         <%= @user.followings.count %>
         <% end %>
       </div>
 
       <div class="follower">
         フォロワ数：
-        <%= link_to user_relationships_path(@user.id), class: 'link' do %>
+        <%= link_to user_relationships_path(@user.id) do %>
         <%= @user.followers.count %>
         <% end %>
       </div>
@@ -53,6 +53,10 @@
 
 
 </div>
+
+
+
+
 
 <div class="container-fluid">
   

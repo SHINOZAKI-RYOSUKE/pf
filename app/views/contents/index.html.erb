@@ -24,29 +24,29 @@
         <% @contents_reverse.each do |content| %>
           <div class="card mb-5">
 
-            <%= link_to content_path(content.id), class: "card_image" do %>
+            <%= link_to content_path(content.id) do %>
               <div><%= attachment_image_tag content, :content_image, :fill, 800, 500, format: 'jpg', class: "content-image" %></div>
             <% end %>
 
-            <div class="card_show d-flex flex-row">
+            <div class="d-flex flex-row">
               <%= link_to user_path(content.user.id) do %>
-                <div class="p-2 card_item1">
+                <div class="p-2">
                   <%= attachment_image_tag content.user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "0.jpeg", class: "user-image", style: "border-style: none;" %>
                 </div>
               <% end %>
 
               <div>
-                <div class="card_item1 d-flex justify-content-end pt-2 px-3">
-                  <div class="pl-2 card_item2">
+                <div class="d-flex justify-content-end pt-2 px-3">
+                  <div class="pl-2 ">
                     コメント件数：<%= link_to content.comments.count, content_comments_path(content.id) %>
                   </div>
 
-                  <div class="pl-5 pr-2 card_item2 favorite_buttons_<%= content.id %>">
+                  <div class="pl-5 pr-2 favorite_buttons_<%= content.id %>">
                     <%= render 'favorites/favorite',content: content %>
                   </div>
                 </div>
 
-                <div class="pb-2 px-2 card_item">
+                <div class="pb-2 px-2">
                   <%= content.description.truncate(30) %>
                 </div>
               </div>
@@ -67,29 +67,29 @@
         <% @contents.each do |content| %>
           <div class="card mb-5">
 
-            <%= link_to content_path(content.id), class: "card_image" do %>
+            <%= link_to content_path(content.id) do %>
               <div><%= attachment_image_tag content, :content_image, :fill, 800, 500, format: 'jpg', class: "content-image" %></div>
             <% end %>
 
-            <div class="card_show d-flex flex-row">
+            <div class="d-flex flex-row">
               <%= link_to user_path(content.user.id) do %>
-                <div class="p-2 card_item1">
+                <div class="p-2">
                   <%= attachment_image_tag content.user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "0.jpeg", class: "user-image", style: "border-style: none;" %>
                 </div>
               <% end %>
 
             <div>
-                <div class="card_item1 d-flex justify-content-end pt-2 px-3">
-                  <div class="pl-2 card_item2">
+                <div class="d-flex justify-content-end pt-2 px-3">
+                  <div class="pl-2">
                     コメント件数：<%= link_to content.comments.count, content_comments_path(content.id) %>
                   </div>
 
-                  <div class="pl-5 pr-2 card_item2 favorite_buttons_<%= content.id %>">
+                  <div class="pl-5 pr-2 favorite_buttons_<%= content.id %>">
                     <%= render 'favorites/favorite',content: content %>
                   </div>
                 </div>
 
-                <div class="pb-2 px-2 card_item">
+                <div class="pb-2 px-2">
                   <%= content.description.truncate(30) %>
                 </div>
               </div>
