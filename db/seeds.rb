@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 10.times do |n|
-  user = User.create!(
+  User.create!(
     email: "test#{n + 1}@test.com",
     name: "User#{n + 1}",
     introduction: "初めまして、これから参考になるアイテムなどを投稿していきたいと思います。test#{n + 1}",
@@ -17,10 +17,30 @@
     profile_image: open("./app/assets/images/#{n + 1}.jpeg"),
   )
 
+
+
+
     3.times do |i|
-      user.contents.create!(
-        content_image: File.open("./app/assets/images/#{i + 1}.jpeg"),
-        description: "皆さんの素敵なレイアウトを参考に部屋を小さくイノベーションしました！test#{n + 1}",
+      Content.create!(
+        user_id: n + 1,
+        content_image: open("./app/assets/images/#{i + 1}.jpeg"),
+        description: "皆さんの素敵なレイアウトを参考に部屋を小さくイノベーションしました！test#{i + 1}",
+      )
+    end
+
+    
+    3.times do |y|
+      Comment.create!(
+        user_id: n + 1,
+        content_id: y + 1,
+        comment: "凄くいいですね。参考にします。"
+      )
+    end
+    
+    3.times do |x|
+      Favorite.create!(
+        user_id: n + 1,
+        content_id: x + 1,
       )
     end
 
@@ -31,20 +51,6 @@
     #     comment: "凄くいいですね。参考にします。test#{n + 1}"
     #   )
     # end
-    
-    5.times do |y|
-      Comment.create!(
-        user_id: n + 1,
-        content_id: n + 1,
-        comment: "凄くいいですね。参考にします。test#{n + 1}"
-      )
-    end
 
-    5.times do |x|
-      Favorite.create!(
-        user_id: n + 1,
-        content_id: n + 1,
-      )
-    end
 
 end
