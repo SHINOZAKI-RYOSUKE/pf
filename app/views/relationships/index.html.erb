@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    
+
     <div class="col-1 text-center">
       <div class="side_left">
         <%= link_to new_content_path do %>
@@ -14,22 +14,22 @@
 
     <div class="col-5">
       <div class="text-center">
-        
+
         <h1 class="mb-5">Follow</h1>
         <% @users_A.each do |user| %>
-          <div class="card d-flex flex-row justify-content-between align-items-center mb-3 font-size-small">
+          <div class="card flex-row justify-content-between align-items-center mb-3">
 
-            <%= link_to user_path(user.id), class: 'd-flex flex-row' do %>
+            <%= link_to user_path(user.id) do %>
               <div class="p-2 ml-3">
                 <%= attachment_image_tag user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "0.jpeg", class: "user-image", style: "border-style: none;" %>
               </div>
             <% end %>
-        
+
             <div class="p-2">
               <%= user.name %>
             </div>
-          
-            
+
+
             <div class="p-2 mr-3">
               <% if current_user != user %>
                 <% if user.followed_by?(current_user) %>
@@ -39,35 +39,35 @@
                 <% end %>
               <% end %>
             </div>
-            
+
           </div>
         <% end %>
-            
+
       </div>
     </div>
-    
-    
-    
-    
+
+
+
+
     <div class="col-5">
       <div class="text-center">
-        
+
         <h1 class="mb-5">Follower</h1>
         <% @users_P.each do |user| %>
-          <div class="card d-flex flex-row justify-content-between align-items-center mb-3 font-size-small">
+          <div class="card flex-row justify-content-between align-items-center mb-3">
 
-            <%= link_to user_path(user.id), class: 'd-flex flex-row' do %>
+            <%= link_to user_path(user.id) do %>
               <div class="p-2 ml-3">
                 <%= attachment_image_tag user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "0.jpeg", class: "user-image", style: "border-style: none;" %>
               </div>
             <% end %>
-        
+
             <div class="p-2">
               <%= user.name %>
             </div>
-            
-          
-            
+
+
+
             <div class="p-2 mr-3">
               <% if current_user != user %>
                 <% if user.followed_by?(current_user) %>
@@ -77,14 +77,14 @@
                 <% end %>
               <% end %>
             </div>
-            
+
           </div>
         <% end %>
-            
+
       </div>
     </div>
-    
-    
+
+
 
 
     <div class="side_right col-1 text-center">
