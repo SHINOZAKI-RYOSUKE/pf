@@ -4,7 +4,7 @@
 
       <div>
         <div class="text_message card px-4 py-2 mr-3">
-          <%= chat.message %>
+          <%= simple_format(chat.message) %>
         </div>
         <div class="sent_time mr-3">
           <%= chat.created_at %>
@@ -29,7 +29,7 @@
 
       <div>
         <div class="text_message card px-4 py-2 ml-3">
-          <%= chat.message %>
+          <%= simple_format(chat.message) %>
         </div>
         <div class="sent_time d-flex justify-content-start mx-3">
           <%= chat.created_at %>
