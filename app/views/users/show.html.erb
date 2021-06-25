@@ -8,7 +8,7 @@
   <div class="row card pt-4">
     <div class="col-12 text-center mb-5 px-5">
 
-      <div><%= attachment_image_tag @user, :profile_image, :fill, 300, 300, format: 'jpg', fallback: "0.jpeg", class: "user-image2" %></div>
+      <div><%= attachment_image_tag @user, :profile_image, :fill, 300, 300, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image2" %></div>
 
       <h3><%= @user.name %></h3>
 
@@ -85,7 +85,7 @@
             <div class="card_show d-flex flex-row">
               <%= link_to user_path(content.user.id) do %>
                 <div class="p-2 card_item1">
-                  <%= attachment_image_tag content.user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "0.jpeg", class: "user-image", style: "border-style: none;" %>
+                  <%= attachment_image_tag content.user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image", style: "border-style: none;" %>
                 </div>
               <% end %>
 
@@ -130,7 +130,7 @@
             <div class="card_show d-flex flex-row">
               <%= link_to content_path(content.id) do %>
                 <div class="p-2 card_item1">
-                  <%= attachment_image_tag content.user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "0.jpeg", class: "user-image", style: "border-style: none;" %>
+                  <%= attachment_image_tag content.user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image", style: "border-style: none;" %>
                 </div>
               <% end %>
 

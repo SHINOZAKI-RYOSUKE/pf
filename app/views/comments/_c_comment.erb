@@ -3,7 +3,7 @@
   <div class="card d-flex flex-row justify-content-between align-items-center mb-3">
     <%= link_to user_path(c_comment.user.id), class: 'link' do %>
       <div class="p-2 ml-3">
-        <%= attachment_image_tag c_comment.user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "0.jpeg", class: "user-image" %>
+        <%= attachment_image_tag c_comment.user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image" %>
       </div>
     <% end %>
 

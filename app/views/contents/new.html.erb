@@ -40,21 +40,7 @@
 
       <div class="p-5">
         <div class="px-5">
-          <%# 本番環境でエラー
-          
-          F, [2021-06-24T13:03:20.668293 #9328] FATAL -- : [3fbf251d-7929-436d-8462-ff70cecb4804]     40: 
-          F, [2021-06-24T13:03:20.668293 #9328] FATAL -- : [3fbf251d-7929-436d-8462-ff70cecb4804]     40: 
-          [3fbf251d-7929-436d-8462-ff70cecb4804]     41:       <div class="p-5">
-          [3fbf251d-7929-436d-8462-ff70cecb4804]     42:         <div class="px-5">
-          [3fbf251d-7929-436d-8462-ff70cecb4804]     43:           <%= attachment_image_tag @user, :content_image, :fill, 800, 500, format: 'jpg', fallback: "0.jpeg", class: "content-image2", style: "border-style: none;", id: "preview_image" 
-          [3fbf251d-7929-436d-8462-ff70cecb4804]     44:         </div>
-          [3fbf251d-7929-436d-8462-ff70cecb4804]     45:       </div>
-          [3fbf251d-7929-436d-8462-ff70cecb4804]     46: 
-          F, [2021-06-24T13:03:20.668323 #9328] FATAL -- : [3fbf251d-7929-436d-8462-ff70cecb4804]   
-          F, [2021-06-24T13:03:20.668363 #9328] FATAL -- : [3fbf251d-7929-436d-8462-ff70cecb4804] app/views/contents/new.html.erb:43:in `_app_views_contents_new_html_erb__2495606107719514026_34878440'
-                    
-          %>
-          <%= attachment_image_tag @user, :content_image, :fill, 800, 500, format: 'jpg', fallback: "0.jpeg", class: "content-image2", style: "border-style: none;", id: "preview_image" %>
+          <%= attachment_image_tag @user, :content_image, :fill, 800, 500, format: 'jpg', fallback: "test_images/0.jpg", class: "content-image2", style: "border-style: none;", id: "preview_image" %>
         </div>
       </div>
 

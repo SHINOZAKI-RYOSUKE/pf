@@ -21,7 +21,7 @@
 
             <%= link_to user_path(favo.user.id) do %>
               <div class="p-2 ml-3">
-                <%= attachment_image_tag favo.user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "0.jpeg", class: "user-image", style: "border-style: none;" %>
+                <%= attachment_image_tag favo.user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image", style: "border-style: none;" %>
               </div>
             <% end %>
 

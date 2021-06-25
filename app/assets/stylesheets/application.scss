@@ -31,7 +31,7 @@
 // ---------------------------------
 // sign_up sign_in　のbackground-image編集
 #bg_img {
-  background-image: image-url("0.jpeg");
+  background-image: image-url("test_images/0.jpg");
   background-position: center;
   background-size: cover;
   height :750px;
@@ -82,6 +82,41 @@ a:hover{
 
 
 // -----------------------------------USER-----------------------------------
+// about画面のスライドショー用
+.about {
+  height :500px;
+}
+
+.background-image1 {
+  background-image: image-url("test_images/1.jpg");
+}
+.background-image2 {
+  background-image: image-url("test_images/2.jpg");
+}
+.background-image3 {
+  background-image: image-url("test_images/3.jpg");
+}
+.background-image4 {
+  background-image: image-url("test_images/4.jpg");
+}
+.background-image5 {
+  background-image: image-url("test_images/5.jpg");
+}
+.background-image6 {
+  background-image: image-url("test_images/6.jpg");
+}
+.background-image7 {
+  background-image: image-url("test_images/7.jpg");
+}
+.background-image8 {
+  background-image: image-url("test_images/8.jpg");
+}
+.background-image9 {
+  background-image: image-url("test_images/9.jpg");
+}
+
+
+// -----------------------------------USER-----------------------------------
 // Userアイコン用
 .user-image {
   width: 80px;
@@ -128,7 +163,7 @@ a:hover{
 
 
 // ---------------------------------CONTENT---------------------------------
-// 
+//
 .content-image {
   width: 100%;
   height: 60%;
@@ -148,7 +183,7 @@ a:hover{
    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
    transform: translateY(-2px);
  }
- 
+
 // -----------------------
 // content(show/btn/follow)用編集
  .content_action {
