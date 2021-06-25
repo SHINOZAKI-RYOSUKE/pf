@@ -14,7 +14,7 @@
     greeting: "こんにちわ！test#{n + 1}",
     password: "password",
     password_confirmation: "password",
-    profile_image: open("./app/assets/images/#{n + 1}.jpg"),
+    profile_image: open("./app/assets/images/test_images/#{n + 1}.jpg"),
   )
 
 
@@ -23,7 +23,7 @@
     3.times do |i|
       Content.create!(
         user_id: n + 1,
-        content_image: open("./app/assets/images/#{i + 1}.jpg"),
+        content_image: open("./app/assets/images/test_images/#{i + 1}.jpg"),
         description: "皆さんの素敵なレイアウトを参考に部屋を小さくイノベーションしました！test#{i + 1}",
       )
     end
