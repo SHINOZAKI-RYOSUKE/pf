@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
 
-    <div class="col-1 text-center">
+    <div class="col-1">
       <div class="side_left">
         <%= link_to new_content_path do %>
         <i class="far fa-plus-square fa-3x"></i>
@@ -28,7 +28,7 @@
 
         <div class="mb-2">Introduction</div>
         <div class="card form-group mb-5">
-            <%= f.text_area :description, :size=>"30x5", placeholder: "コメント（MAX:300）", class: "form-control" %>
+            <%= f.text_area :description, :size=>"30x5", placeholder: "コメント（MAX:1000）", class: "form-control" %>
         </div>
 
         <div class="form-group mb-5">
@@ -50,7 +50,7 @@
 
 
 
-    <div class="side_right col-1 text-center">
+    <div class="side_right col-1">
       <span id="back">
         <a href="#">
           <i class="fas fa-angle-double-up fa-3x mr-3"></i>

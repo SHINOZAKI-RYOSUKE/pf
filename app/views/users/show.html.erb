@@ -12,7 +12,9 @@
 
       <h3><%= @user.name %></h3>
 
-      <div class="user_introduction card mb-2 py-3 px-5"><%= @user.introduction %></div>
+      <div class="user_introduction text_start card mb-2 py-3 px-5">
+        <%= simple_format(@user.introduction) %>
+      </div>
 
       <div class="following">
         フォロー数：
@@ -61,7 +63,7 @@
 <div class="container-fluid">
   
   <div class="row">
-    <div class="col-1 text-center">
+    <div class="col-1">
       <div class="side_left">
         <%= link_to new_content_path do %>
         <i class="far fa-plus-square fa-3x"></i>
@@ -160,7 +162,7 @@
 
 
 
-    <div class="side_right col-1 text-center">
+    <div class="side_right col-1">
       <span id="back">
         <a href="#">
           <i class="fas fa-angle-double-up fa-3x"></i>

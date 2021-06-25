@@ -29,6 +29,12 @@
 }
 
 // ---------------------------------
+// testプレビュー（content(show),comment(index),chat(show)）用編集
+.text_start {
+  text-align: start !important;
+}
+
+// ---------------------------------
 // sign_up sign_in　のbackground-image編集
 #bg_img {
   background-image: image-url("test_images/0.jpg");
@@ -193,6 +199,11 @@ a:hover{
 
 
 // ----------------------------------CHAT------------------------------------
+// 行間調整
+p {
+  margin-bottom: 0px;
+}
+
 // chat(show/自分のメッセ)編集
 .my_message {
   margin-left: 20% ;

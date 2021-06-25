@@ -7,7 +7,7 @@ class Comment < ApplicationRecord
 # validates----------------------------------
   validates :comment, 
     presence: true,
-    length: { in: 1..300 }
+    length: { in: 1..1000 }
 
 
 end

@@ -18,7 +18,7 @@ class Content < ApplicationRecord
 # validates----------------------------------
 	validates :description,
 	  presence: true,
-	  length: { maximum: 300 }
+	  length: { maximum: 1000 }
 
   validates :content_image,
     presence: true

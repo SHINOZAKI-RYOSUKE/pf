@@ -15,7 +15,7 @@
      ♡<%= link_to content.favorites.count, content_favorites_path(content), method: :get %>
     </p>
   <% end %>
-  
+
 <% else %>
-  <!--ログインしていなければ表示しないので空白でOK-->
+  <p>いいね ♥<%= content.favorites.count %></p>
 <% end %>
