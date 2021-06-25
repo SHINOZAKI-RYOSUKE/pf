@@ -6,13 +6,7 @@
 
   <div class="row">
 
-    <div class="col-1">
-      <div class="side_left">
-        <%= link_to new_content_path do %>
-        <i class="far fa-plus-square fa-3x"></i>
-        <% end %>
-      </div>
-    </div>
+    <div class="col-1"></div>
 
 
 
@@ -43,13 +37,7 @@
 
 
 
-    <div class="side_right col-1">
-      <span id="back">
-        <a href="#">
-          <i class="fas fa-angle-double-up fa-3x"></i>
-        </a>
-      </span>
-    </div>
+    <div class="side_right col-1"></div>
 
   </div>
 
@@ -57,10 +45,16 @@
 
 
 
-  <div class="container-fluid">
+  <div class="container-fluid px-0">
     <div class="row">
 
-      <div class="col-1"></div>
+      <div class="col-1">
+        <div class="side_left">
+          <%= link_to new_content_path do %>
+          <i class="far fa-plus-square fa-3x"></i>
+          <% end %>
+        </div>
+      </div>
 
         <div class="col-10 px-0">
           <div class="comment-index">
@@ -68,7 +62,13 @@
           </div>
         </div>
 
-      <div class="col-1"></div>
+      <div class="col-1">
+        <span id="back">
+          <a href="#">
+            <i class="fas fa-angle-double-up fa-3x"></i>
+          </a>
+        </span>
+      </div>
 
     </div>
   </div>
