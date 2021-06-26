@@ -33,6 +33,9 @@ class User < ApplicationRecord
     passive_relationships.find_by(following_id: user.id).present?
   end
 
+  def self.looks(word)
+    @user = User.where("name LIKE?","%#{word}%")
+  end
 
 # validates----------------------------------
   validates :name,
