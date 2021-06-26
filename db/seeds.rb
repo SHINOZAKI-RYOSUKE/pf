@@ -44,13 +44,6 @@
       )
     end
 
-    # 5.times do |y|
-    #   user.content_comments.create!(
-    #     user_id: n + 1,
-    #     content_id: n + 1,
-    #     comment: "凄くいいですね。参考にします。test#{n + 1}"
-    #   )
-    # end
 
 
 
