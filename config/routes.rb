@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     end
 
 
+    get "search" => "users#search_result", as: "search_result"
+
     get 'chat/:id' => 'chats#show', as: 'chat'
 
     resources :chats, only: [:index, :create]
