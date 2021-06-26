@@ -19,7 +19,7 @@
 
 
         <div>
-          <%= attachment_image_tag @user, :profile_image, :fill, 300, 300, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image2", style: "border-style: none;", id: "preview_image" %>
+          <%= attachment_image_tag @user, :profile_image, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image2", style: "border-style: none;", id: "preview_image" %>
         </div>
 
         <%= form_with model:@user, local:true do |f| %>

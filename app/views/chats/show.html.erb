@@ -45,14 +45,14 @@
         </div>
       </div>
 
-        <div class="col-10 px-0">
-          <div class="message mb-5">
-            <%= render partial:'chats/message',collection: @chats,as:"chat" %>
-            <%# collection: @chats　で　@chats個　分繰り返してる。 %>
-            <%# @chats,as:"chat"　は、@chat に chat を入れている。 %>
-            <%# SQL文を少なくするように .prepend  を採用している。 %>
-          </div>
+      <div class="col-10 px-0">
+        <div class="message mb-5">
+          <%= render partial:'chats/message',collection: @chats,as:"chat" %>
+          <%# collection: @chats　で　@chats個　分繰り返してる。 %>
+          <%# @chats,as:"chat"　は、@chat に chat を入れている。 %>
+          <%# SQL文を少なくするように .prepend  を採用している。 %>
         </div>
+      </div>
 
       <div class="col-1">
         <span id="back">

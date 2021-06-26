@@ -20,7 +20,7 @@
         <div>
           <div class="justify-content-center pt-2">
             <%= link_to user_path(@content.user.id) do %>
-              <%= attachment_image_tag @content.user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image", style: "border-style: none;" %>
+              <%= attachment_image_tag @content.user, :profile_image, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image", style: "border-style: none;" %>
             <% end %>
 
             <h3 class="mb-3">
@@ -46,7 +46,7 @@
         <div class="card mb-5 pb-3">
 
           <div>
-            <%= attachment_image_tag @content, :content_image, :fill, 800, 500, format: 'jpg', class: "content-image" %>
+            <%= attachment_image_tag @content, :content_image, format: 'jpg', class: "content-image" %>
             <div class="d-flex pl-2 pt-2">
               <div class="pl-2">
                 コメント件数：<%= link_to @content.comments.count, content_comments_path(@content.id) %>
