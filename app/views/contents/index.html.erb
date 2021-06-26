@@ -25,13 +25,13 @@
           <div class="card mb-5">
 
             <%= link_to content_path(content.id) do %>
-              <div><%= attachment_image_tag content, :content_image, :fill, 800, 500, format: 'jpg', class: "content-image" %></div>
+              <div><%= attachment_image_tag content, :content_image, format: 'jpg', class: "content-image" %></div>
             <% end %>
 
             <div class="d-flex flex-row">
               <%= link_to user_path(content.user.id) do %>
                 <div class="p-2">
-                  <%= attachment_image_tag content.user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image", style: "border-style: none;" %>
+                  <%= attachment_image_tag content.user, :profile_image, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image", style: "border-style: none;" %>
                 </div>
               <% end %>
 
@@ -68,13 +68,13 @@
           <div class="card mb-5">
 
             <%= link_to content_path(content.id) do %>
-              <div><%= attachment_image_tag content, :content_image, :fill, 800, 500, format: 'jpg', class: "content-image" %></div>
+              <div><%= attachment_image_tag content, :content_image, format: 'jpg', class: "content-image" %></div>
             <% end %>
 
             <div class="d-flex flex-row">
               <%= link_to user_path(content.user.id) do %>
                 <div class="p-2">
-                  <%= attachment_image_tag content.user, :profile_image, :fill, 200, 200, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image", style: "border-style: none;" %>
+                  <%= attachment_image_tag content.user, :profile_image, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image", style: "border-style: none;" %>
                 </div>
               <% end %>
 
