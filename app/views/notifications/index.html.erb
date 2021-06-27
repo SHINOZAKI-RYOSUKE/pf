@@ -1,0 +1,62 @@
+<% notifications = @notifications.where.not(visitor_id: current_user.id) %>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-2">
+      <div class="side_left">
+        <%= link_to new_content_path do %>
+        <i class="far fa-plus-square fa-3x"></i>
+        <% end %>
+      </div>
+    </div>
+
+
+
+
+    <div class="col-8">
+      <div class="text-center">
+
+
+        <h1 class="mb-5">Notifications</h1>
+        <%= link_to "通知削除", destroy_all_notifications_path, method: :delete, class: "btn btn-outline-secondary btn-sm mb-4" %>
+          <div class="mb-3">
+
+            <div>
+              <% if notifications.exists? %>
+
+                <div>
+                  <%= render notifications %>
+                </div>
+                  <div>
+                  <%= paginate notifications %>
+                </div>
+
+              <% else %>
+
+                <div>
+                  通知はありません
+                </div>
+
+              <% end %>
+            </div>
+
+          </div>
+
+
+      </div>
+    </div>
+
+
+
+
+    <div class="side_right col-2">
+      <span id="back">
+        <a href="#">
+          <i class="fas fa-angle-double-up fa-3x mr-3"></i>
+        </a>
+      </span>
+    </div>
+
+  </div>
+</div>

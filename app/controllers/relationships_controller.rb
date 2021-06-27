@@ -12,6 +12,12 @@ class RelationshipsController < ApplicationController
   def create
     follow = current_user.active_relationships.build(follower_id: params[:user_id])
     follow.save
+    
+    # ここから
+    user = User.find(params[:user_id])
+    user.create_notification_follow!(current_user)
+    # ここまで
+    
     redirect_to request.referer
   end
 
