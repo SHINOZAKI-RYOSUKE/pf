@@ -1,12 +1,15 @@
 <% visitor = notification.visitor %>
 <% visited = notification.visited %>
 
-<%= time_ago_in_words(notification.created_at).upcase %>
-<div class="user_introduction card text-nowrap mb-3">
+<%= time_ago_in_words(notification.created_at).upcase %>前
+<div class="user_introduction card text-nowrap mb-5">
 
-  <%= link_to user_path(visitor) do %>
-    <%= attachment_image_tag visitor, :profile_image, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image m-2", style: "border-style: none;" %>
-  <% end %>
+  <div>
+    <%= link_to user_path(visitor) do %>
+      <%= attachment_image_tag visitor, :profile_image, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image m-2", style: "border-style: none;" %>
+    <% end %>
+  </div>
+    
   <div class="d-flex justify-content-center">
     <strong><%= visitor.name %></strong>
     <%= 'さんが' %>
@@ -20,12 +23,10 @@
     
     <% when 'chat' then %>
     <div class="d-flex justify-content-center mb-2">
- 
-        <%= link_to 'あなたにメッセージ', chat_path(notification.visitor), style:"font-weight: bold;", class: "border-bottom" %>
-  
-      <div>
-        <%= "を送りました" %>
-      </div>
+      <strong>
+        <%= link_to 'あなたにメッセージ', chat_path(notification.visitor) %>
+      </strong>
+      <%= "を送りました" %>
     </div>
 
     <% when 'like' then %>
