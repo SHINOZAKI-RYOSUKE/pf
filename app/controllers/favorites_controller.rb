@@ -12,6 +12,10 @@ class FavoritesController < ApplicationController
     
     favorite = current_user.favorites.new(content_id: @content.id)
     favorite.save
+    
+    # ここから
+    @content.create_notification_like!(current_user)
+    # ここまで
   end
 
   def destroy
