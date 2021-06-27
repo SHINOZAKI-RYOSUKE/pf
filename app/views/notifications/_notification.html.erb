@@ -15,7 +15,17 @@
   <% case notification.action %>
     <% when 'follow' then %>
     <div class="d-flex justify-content-center mb-2">
-    <%= "あなたをフォローしました" %>
+      <%= "あなたをフォローしました" %>
+    </div>
+    
+    <% when 'chat' then %>
+    <div class="d-flex justify-content-center mb-2">
+ 
+        <%= link_to 'あなたにメッセージ', chat_path(notification.visitor), style:"font-weight: bold;", class: "border-bottom" %>
+  
+      <div>
+        <%= "を送りました" %>
+      </div>
     </div>
 
     <% when 'like' then %>
