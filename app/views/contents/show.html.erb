@@ -45,7 +45,7 @@
         <div class="card mb-5 pb-3">
 
           <div>
-            <%= attachment_image_tag @content, :content_image, format: 'jpg', class: "content-image" %>
+            <%= attachment_image_tag @content, :content_image, format: 'jpg', style: "width: 100%;" %>
             <div class="d-flex pl-2 pt-2">
               <div class="pl-2">
                 コメント件数：<%= link_to @content.comments.count, content_path(@content.id) %>
@@ -63,7 +63,7 @@
             </div>
           </div>
 
-          
+
 
           <div class="content_action">
             <% if user_signed_in? && current_user.id == @content.user_id %>

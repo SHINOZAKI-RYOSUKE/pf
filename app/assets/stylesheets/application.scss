@@ -182,10 +182,17 @@ a:hover{
 
 
 // ---------------------------------CONTENT---------------------------------
+// 投稿一覧（全体）　用イメージ編集
+.main_contents {
+  width: 90%;
+  margin: auto;
+}
+
 // 投稿一覧　用イメージ編集
 .content-image {
   width: 100%;
-  height: 100%;
+  height: 450px;
+  object-fit: cover;
 }
 
 // -----------------------
