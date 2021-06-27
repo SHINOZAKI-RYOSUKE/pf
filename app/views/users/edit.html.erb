@@ -28,6 +28,11 @@
           <label class="custom-file-label" for="customFile">画像を選択...</label>
           <%= f.attachment_field :profile_image, class: "custom-file-input"  %>
         </div>
+        
+        <div class="mb-2">Name</div>
+        <div class="card mb-5 form-group">
+            <%= f.text_field :name, placeholder: "名前（1~20）", class: "form-control" %>
+        </div>
 
         <div class="mb-2">Introduction</div>
         <div class="card mb-5 form-group">
