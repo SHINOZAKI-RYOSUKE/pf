@@ -1,0 +1,49 @@
+<% visitor = notification.visitor %>
+<% visited = notification.visited %>
+
+<%= time_ago_in_words(notification.created_at).upcase %>
+<div class="user_introduction card text-nowrap mb-3">
+
+  <%= link_to user_path(visitor) do %>
+    <%= attachment_image_tag visitor, :profile_image, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image m-2", style: "border-style: none;" %>
+  <% end %>
+  <div class="d-flex justify-content-center">
+    <strong><%= visitor.name %></strong>
+    <%= 'さんが' %>
+  </div>
+
+  <% case notification.action %>
+    <% when 'follow' then %>
+    <div class="d-flex justify-content-center mb-2">
+    <%= "あなたをフォローしました" %>
+    </div>
+
+    <% when 'like' then %>
+    <div class="d-flex justify-content-center mb-2">
+      <strong>
+        <%= link_to 'あなたの投稿', notification.content %>
+      </strong>
+      <%= "にいいねしました" %>
+    </div>
+
+    <% when 'comment' then %>
+    <div class="d-flex justify-content-center mx-3">
+      <% if notification.content.user_id == visited.id %>
+        <strong><%= link_to "あなたの投稿", notification.content %></strong>
+        <%= "にコメントしました" %>
+      <% else %>
+        <%= link_to content_path(notification.content) do %><strong><%= notification.content.user.name + 'さんの投稿' %></strong><% end %>
+        <%= "にコメントしました" %>
+      <% end %>
+    </div>
+
+    <div class="m-2">
+      <%= notification.comment.comment.truncate(15) %>
+    </div>
+
+  <% end %>
+
+</div>
+
+
+
