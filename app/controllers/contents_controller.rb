@@ -10,6 +10,9 @@ class ContentsController < ApplicationController
 
   def show
     @content = Content.find(params[:id])
+    
+    @comments = Comment.all
+    @c_comment = Comment.new
   end
   
   def destroy

@@ -30,6 +30,11 @@ class ChatsController < ApplicationController
     @chat = current_user.chats.new(chat_params)
     @chat.save
     @chats = @chat.room.chats.page(params[:page]).reverse_order
+    visited_id = @chat.room.user_rooms.where.not(user_id: current_user.id).first.user_id
+    # ここから
+    @chat.create_notification_chat!(current_user, @chat.id, @chat.room.id, visited_id)
+    # ここまで
+
   end
 
 
