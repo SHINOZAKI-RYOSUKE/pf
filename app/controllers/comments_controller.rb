@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
 
   before_action :authenticate_user!
 
-
   def create
     @content = Content.find(params[:content_id])
 
