@@ -40,7 +40,7 @@ class Content < ApplicationRecord
     temp_ids.each do |temp_id|
       save_notification_comment!(current_user, comment.id, temp_id['user_id'])
     end
-    # 投稿者にも通知を送る
+    # 投稿に対して初めてのコメントの通知を送る　投稿者にも通知を送る
     save_notification_comment!(current_user, comment.id, content.user.id)
   end
 
