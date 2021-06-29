@@ -26,7 +26,7 @@ class User < ApplicationRecord
   # 自分がフォローされるユーザーとの関連
   has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id, dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :following, dependent: :destroy
-  
+
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
@@ -39,8 +39,8 @@ class User < ApplicationRecord
   def self.looks(word)
     @user = User.where("name LIKE?","%#{word}%")
   end
-  
-  
+
+
   def create_notification_follow!(current_user)
     temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ",current_user.id, id, 'follow'])
     if temp.blank?
@@ -56,7 +56,7 @@ class User < ApplicationRecord
   validates :name,
     presence: true,
     uniqueness: true,
-    length: { in: 2..20 }
+    length: { in: 1..20 }
 
   validates :introduction,
     length: { maximum: 300 }

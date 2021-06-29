@@ -2,116 +2,72 @@
 
   <div class="row">
     <h1 class="col-12 text-center mb-5">Contents</h1>
+    <h4 class="col-12 text-center mb-5">~ New ~</h4>
   </div>
 
-  <div class="row">
-
-    <div class="col-1">
-      <div class="side_left">
-        <%= link_to new_content_path do %>
-        <i class="far fa-plus-square fa-3x"></i>
-        <% end %>
-      </div>
-    </div>
+  <div class="side_left">
+    <%= link_to new_content_path do %>
+    <i class="far fa-plus-square fa-3x"></i>
+    <% end %>
+  </div>
 
 
-
-
-    <div class="col-5">
-      <div class="text-center">
-
-        <h4 class="mb-5">New</h4>
-        <% @contents_reverse.each do |content| %>
-          <div class="card mb-5">
-
-            <%= link_to content_path(content.id) do %>
-              <div><%= attachment_image_tag content, :content_image, format: 'jpg', class: "content-image" %></div>
-            <% end %>
-
-            <div class="d-flex flex-row">
-              <%= link_to user_path(content.user.id) do %>
-                <div class="p-2">
-                  <%= attachment_image_tag content.user, :profile_image, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image", style: "border-style: none;" %>
-                </div>
-              <% end %>
-
-              <div>
-                <div class="d-flex justify-content-end pt-2 px-3">
-                  <div class="pl-2 ">
-                    コメント件数：<%= link_to content.comments.count, content_path(content.id) %>
-                  </div>
-
-                  <div class="pl-5 pr-2 favorite_buttons_<%= content.id %>">
-                    <%= render 'favorites/favorite',content: content %>
-                  </div>
-                </div>
-
-                <div class="pb-2 px-2">
-                  <%= content.description.truncate(30) %>
-                </div>
+  <div class="container-fluid">
+    <div class="main_contents row">
+      
+      
+      <% @contents_reverse.each do |content| %>
+  
+      <div class="col-6">
+        <div class="card mb-5">
+          
+          <%= link_to content_path(content.id) do %>
+            <div><%= attachment_image_tag content, :content_image, format: 'jpg', class: "content-image" %></div>
+          <% end %>
+  
+          <div class="d-flex flex-row">
+            
+            <%= link_to user_path(content.user.id) do %>
+              <div class="p-2">
+                <%= attachment_image_tag content.user, :profile_image, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image", style: "border-style: none;" %>
               </div>
-
-            </div>
-
-          </div>
-        <% end %>
-
-      </div>
-    </div>
-
-
-    <div class="col-5">
-      <div class="text-center">
-
-        <h4 class="mb-5">Old</h4>
-        <% @contents.each do |content| %>
-          <div class="card mb-5">
-
-            <%= link_to content_path(content.id) do %>
-              <div><%= attachment_image_tag content, :content_image, format: 'jpg', class: "content-image" %></div>
             <% end %>
-
-            <div class="d-flex flex-row">
-              <%= link_to user_path(content.user.id) do %>
-                <div class="p-2">
-                  <%= attachment_image_tag content.user, :profile_image, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image", style: "border-style: none;" %>
-                </div>
-              <% end %>
-
+  
             <div>
-                <div class="d-flex justify-content-end pt-2 px-3">
-                  <div class="pl-2">
-                    コメント件数：<%= link_to content.comments.count, content_path(content.id) %>
-                  </div>
-
-                  <div class="pl-5 pr-2 favorite_buttons_<%= content.id %>">
-                    <%= render 'favorites/favorite',content: content %>
-                  </div>
+              <div class="d-flex justify-content-end pt-2 px-3">
+                <div class="pl-2 ">
+                  コメント件数：<%= link_to content.comments.count, content_path(content.id) %>
                 </div>
 
-                <div class="pb-2 px-2">
-                  <%= content.description.truncate(30) %>
+                <div class="pl-5 pr-2 favorite_buttons_<%= content.id %>">
+                  <%= render 'favorites/favorite',content: content %>
                 </div>
               </div>
 
-             </div>
-
+              <div class="pb-2 px-2">
+                <%= content.description.truncate(30) %>
+              </div>
+            </div>
+            
           </div>
-        <% end %>
-
+          
+          
+        </div>
       </div>
+   
+      <% end %>
+          
+      
     </div>
-
-
-
-
-    <div class="side_right col-1">
-      <span id="back">
-        <a href="#">
-          <i class="fas fa-angle-double-up fa-3x"></i>
-        </a>
-      </span>
-    </div>
-
   </div>
+  
+  
+  <div class="side_right">
+    <span id="back">
+      <a href="#">
+        <i class="fas fa-angle-double-up fa-3x"></i>
+      </a>
+    </span>
+  </div>
+  
 </div>

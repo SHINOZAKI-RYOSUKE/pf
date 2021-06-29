@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
 
   before_action :authenticate_user!
 
-
   def create
     @content = Content.find(params[:content_id])
 
@@ -10,11 +9,11 @@ class CommentsController < ApplicationController
     comment = current_user.comments.new(comment_params)
     comment.content_id = @content.id
     comment.save
-    
+
     # ここから
-    comment.content.create_notification_comment!(current_user, comment.id)
+    comment.content.create_notification_comment!(current_user, comment, @content)
     # ここまで
-    
+
   end
 
   def destroy

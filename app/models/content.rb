@@ -34,12 +34,14 @@ class Content < ApplicationRecord
   end
 
 
-  def create_notification_comment!(current_user, comment_id)
-    # 自分以外にコメントしている人をすべて取得し、全員に通知を送る
-    temp_ids = Comment.select(:user_id).where(content_id: id).where.not(user_id: current_user.id).distinct
+  def create_notification_comment!(current_user, comment, content)
+    # 自分がコメントを投稿瞬間に、自分以外にコメントしている人をすべて取得し、全員に通知を送る
+    temp_ids = Comment.select(:user_id).where(content_id: content.id).where.not(user_id: current_user.id).distinct
     temp_ids.each do |temp_id|
-      save_notification_comment!(current_user, comment_id, temp_id['user_id'])
+      save_notification_comment!(current_user, comment.id, temp_id['user_id'])
     end
+    # 投稿に対して初めてのコメントの通知を送る　投稿者にも通知を送る
+    save_notification_comment!(current_user, comment.id, content.user.id)
   end
 
   def save_notification_comment!(current_user, comment_id, visited_id)

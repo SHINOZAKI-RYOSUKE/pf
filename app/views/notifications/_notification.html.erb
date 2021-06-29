@@ -9,7 +9,7 @@
       <%= attachment_image_tag visitor, :profile_image, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image m-2", style: "border-style: none;" %>
     <% end %>
   </div>
-    
+
   <div class="d-flex justify-content-center">
     <strong><%= visitor.name %></strong>
     <%= 'さんが' %>
@@ -20,7 +20,7 @@
     <div class="d-flex justify-content-center mb-2">
       <%= "あなたをフォローしました" %>
     </div>
-    
+
     <% when 'chat' then %>
     <div class="d-flex justify-content-center mb-2">
       <strong>
@@ -49,7 +49,8 @@
     </div>
 
     <div class="m-2">
-      <%= notification.comment.comment.truncate(15) %>
+      <%# NoMethodError: を回避するための「＆」 %>
+      <%= notification.comment&.comment&.truncate(15) %>
     </div>
 
   <% end %>

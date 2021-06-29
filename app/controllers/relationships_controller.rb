@@ -1,23 +1,23 @@
 class RelationshipsController < ApplicationController
-  
+
   before_action :authenticate_user!
-  
-  
+
+
   def index
     user = User.find(params[:user_id])
-    @users_A = user.followings
-    @users_P = user.followers
+    @users_A = user.followings.order(created_at: :desc)
+    @users_P = user.followers.order(created_at: :desc)
   end
 
   def create
     follow = current_user.active_relationships.build(follower_id: params[:user_id])
     follow.save
-    
+
     # ここから
     user = User.find(params[:user_id])
     user.create_notification_follow!(current_user)
     # ここまで
-    
+
     redirect_to request.referer
   end
 

@@ -29,6 +29,11 @@
           <%= f.attachment_field :profile_image, class: "custom-file-input"  %>
         </div>
 
+        <div class="mb-2">Name</div>
+        <div class="card mb-5 form-group">
+            <%= f.text_field :name, placeholder: "名前（1~20）", class: "form-control" %>
+        </div>
+
         <div class="mb-2">Introduction</div>
         <div class="card mb-5 form-group">
             <%= f.text_area :introduction, :size=>"30x5", placeholder: "自己紹介（MAX:300）", class: "form-control" %>
