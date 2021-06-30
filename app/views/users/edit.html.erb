@@ -22,13 +22,15 @@
           <%= attachment_image_tag @user, :profile_image, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image2", style: "border-style: none;", id: "preview_image" %>
         </div>
 
-        <%= form_with model:@user, local:true do |f| %>
+        <%= form_with model: @user, local:true do |f| %>
+        
         <div class="mb-2">Content Image</div>
+        
         <div class="item_image_btn">
           <%= f.attachment_field :profile_image %>
         </div>
         <div id="img_field card" onclick="$('#file').click()">
-          <label class="card py-2" for="uesr_profile_image">
+          <label class="card py-2" for="user_profile_image">
             画像を選択...
           </label>
         </div>
