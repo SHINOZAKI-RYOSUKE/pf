@@ -21,10 +21,15 @@
 
         <div class="mb-2">Post Image</div>
 
-        <div class="card custom-file mb-5">
-          <label class="custom-file-label" for="customFile">画像を選択...</label>
-          <%= f.attachment_field :content_image, class: "custom-file-input" %>
+        <div class="item_image_btn">
+          <%= f.attachment_field :content_image %>
         </div>
+        <div id="img_field card" onclick="$('#file').click()">
+          <label class="card py-2" for="content_content_image">
+            画像を選択...
+          </label>
+        </div>
+        
 
         <div class="mb-2">Introduction</div>
         <div class="card form-group mb-5">

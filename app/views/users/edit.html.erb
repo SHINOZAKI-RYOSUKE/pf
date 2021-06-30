@@ -18,18 +18,23 @@
         <h1 class="mb-5">Users</h1>
 
 
-        <div>
+        <div class="mb-5">
           <%= attachment_image_tag @user, :profile_image, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image2", style: "border-style: none;", id: "preview_image" %>
         </div>
 
         <%= form_with model:@user, local:true do |f| %>
-        <div class="my-2">Image</div>
-        <div class="card mb-5 custom-file">
-          <label class="custom-file-label" for="customFile">画像を選択...</label>
-          <%= f.attachment_field :profile_image, class: "custom-file-input"  %>
+        <div class="mb-2">Content Image</div>
+        <div class="item_image_btn">
+          <%= f.attachment_field :profile_image %>
+        </div>
+        <div id="img_field card" onclick="$('#file').click()">
+          <label class="card py-2" for="uesr_profile_image">
+            画像を選択...
+          </label>
         </div>
 
-        <div class="mb-2">Name</div>
+
+        <div class="mt-4 mb-2">Name</div>
         <div class="card mb-5 form-group">
             <%= f.text_field :name, placeholder: "名前（1~20）", class: "form-control" %>
         </div>

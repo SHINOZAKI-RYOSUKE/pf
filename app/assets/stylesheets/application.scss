@@ -35,9 +35,14 @@ p {
 }
 
 // ---------------------------------
-// testプレビュー（content(show),comment(index),chat(show)）用編集
+// txstプレビュー（content(show),comment(index),chat(show)）用編集
 .text_start {
   text-align: start !important;
+}
+
+// 『画像を選択』ボタン
+.item_image_btn  {
+  display: none;
 }
 
 // ---------------------------------
@@ -240,3 +245,6 @@ a:hover{
 .text_message {
   word-break: break-all;
 }
+
+
+
