@@ -16,7 +16,7 @@
       <div class="text-center">
 
         <h1 class="mb-5">Favorites</h1>
-        <% @content.favorites.each do |favo| %>
+        <% @content.favorites.order(created_at: :desc).each do |favo| %>
           <div class="card flex-row justify-content-between align-items-center mb-3">
 
             <%= link_to user_path(favo.user.id) do %>
