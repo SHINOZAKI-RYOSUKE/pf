@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row">
+
+
+  <% if @range == "User" %>
+    <%= render 'search_result', users: @users %>
+    
+  <% elsif @range == "Follow" %>
+    <%= render 'search_result', users: @Follows %>
+    
+  <% elsif @range == "Follower" %>
+    <%= render 'search_result', users: @Followers %>
+  
+  <% end %>
+
+  </div>
+</div>
