@@ -7,6 +7,10 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="shortcut icon" href="favicon.ico" type="images">
+    <%= favicon_link_tag('favicon.ico') %>
+
   </head>
 
 
@@ -46,6 +50,7 @@
               <li class="nav-item mx-2"><%= link_to "About", about_homes_path, class: "nav-link" %></li>
               <li class="nav-item mx-2"><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
             <% else %>
+              <li class="nav-item mx-2"><%= link_to 'Click here for guests', contents_guest_sign_in_path, method: :post, class: "nav-link" %></li>
               <li class="nav-item mx-2"><%= link_to "About", about_homes_path, class: "nav-link" %></li>
               <li class="nav-item mx-2"><%= link_to "Sign up", new_user_registration_path, class: "nav-link" %></li>
               <li class="nav-item mx-2"><%= link_to "Log in", new_user_session_path, class: "nav-link" %></li>
