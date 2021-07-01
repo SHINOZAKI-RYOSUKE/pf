@@ -12,10 +12,12 @@
   </div>
 
 
-  <div class="container-fluid">
-    <div class="main_contents row scroll-list jscroll">
-      <%= render partial: 'index', collection: @contents_reverse, as: 'content' %>
-      <%= paginate @contents_reverse %>
+  <div class="container-fluid main_contents">
+    <div class="row scroll-list jscroll mx-auto">
+      <div class="jscroll-inner d-flex flex-wrap w-100">
+        <%= render partial: 'index', collection: @contents_reverse, as: 'content' %>
+        
+      </div>
     </div>
   </div>
 

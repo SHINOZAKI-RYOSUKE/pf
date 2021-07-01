@@ -15,7 +15,7 @@ class ContentsController < ApplicationController
   end
 
   def index
-    @contents_reverse = Content.order(created_at: :desc).page(params[:page]).per(10)
+    @contents_reverse = Content.order(created_at: :desc).page(params[:page]).per(6)
   end
 
   def show
