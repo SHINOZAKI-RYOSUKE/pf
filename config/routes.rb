@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root :to => "contents#index"
 
 
+    post '/contents/guest_sign_in', to: 'contents#guest_sign_in'
+    
     resource :homes do
      get :about, on: :collection
     end
