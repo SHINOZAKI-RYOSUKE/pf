@@ -29,12 +29,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def search_result
-    @word = params[:word]
-    @users = User.looks(params[:word])
-  end
-
-
+  
 
   private
 
