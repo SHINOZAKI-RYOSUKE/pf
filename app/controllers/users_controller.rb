@@ -5,6 +5,10 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all.order(created_at: :desc)
+    
+    if params[:a] == "dm"
+      @a = "dm"
+    end
   end
 
   def show
@@ -29,7 +33,7 @@ class UsersController < ApplicationController
     end
   end
 
-  
+
 
   private
 
