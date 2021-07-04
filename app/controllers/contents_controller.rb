@@ -40,11 +40,27 @@ class ContentsController < ApplicationController
 
   def update
     @content = Content.find(params[:id])
-    if @content.update(content_params)
-      redirect_to content_path(@content.id), notice:"You have updated content successfully."
+
+    # 画像が編集された場合
+    if params[:content][:content_image].present? && params[:content][:content_image] != "{}"
+      # パラメーター(画像)を「tempfile」として開いて変数に代入
+      profile_image = File.open(params[:content][:content_image].tempfile)
+      # Cloud Vision APIで画像分析して、分析結果を変数に代入
+      result = Vision.image_analysis(profile_image)
     else
-      render "edit"
+      # 画像が編集されてない場合は「true」を代入
+      result = true
     end
+    # 解析結果によって条件分岐
+    if result == true
+      @content.update(content_params)
+      redirect_to content_path(@content.id), notice:"You have updated content successfully."
+    elsif result == false
+      flash[:notice] = '画像が不適切です'
+      render 'edit'
+    end
+
+
   end
 
   def new
@@ -54,11 +70,30 @@ class ContentsController < ApplicationController
   def create
     @content = Content.new(content_params)
     @content.user_id = current_user.id
-    if @content.save
-    redirect_to content_path(@content.id), notice:"You have created content successfully."
+
+    # 画像が編集された場合
+    if params[:content][:content_image].present? && params[:content][:content_image] != "{}"
+      # パラメーター(画像)を「tempfile」として開いて変数に代入
+      profile_image = File.open(params[:content][:content_image].tempfile)
+      # Cloud Vision APIで画像分析して、分析結果を変数に代入
+      result = Vision.image_analysis(profile_image)
     else
-    render "new"
+      flash[:notice] = '必要項目を記述してください'
+      render 'new'
     end
+    # 解析結果によって条件分岐
+    if result == true
+      if @content.save(content_params)
+        redirect_to content_path(@content.id), notice:"You have updated content successfully."
+      else
+        flash[:notice] = '必要項目を記述してください'
+      render 'new'
+      end
+    elsif result == false
+      flash[:notice] = '画像が不適切です'
+      render 'new'
+    end
+
   end
 
 

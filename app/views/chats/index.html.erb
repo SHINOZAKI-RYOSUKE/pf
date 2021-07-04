@@ -16,27 +16,34 @@
       <div class="text-center">
         
         <h1 class="mb-5">Chat rooms</h1>
-        <% @rooms.each do |room| %>
-          <div class="card flex-row justify-content-between align-items-center mb-3">
-            
-            <%= link_to user_path(room.user.id) do %>
-              <div class="p-2 ml-3">
-                <%= attachment_image_tag room.user, :profile_image, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image", style: "border-style: none;" %>
+        <% if  @rooms.present? %>
+          <% @rooms.each do |room| %>
+            <div class="card flex-row justify-content-between align-items-center mb-3">
+              
+              <%= link_to user_path(room.user.id) do %>
+                <div class="p-2 ml-3">
+                  <%= attachment_image_tag room.user, :profile_image, format: 'jpg', fallback: "test_images/0.jpg", class: "user-image", style: "border-style: none;" %>
+                </div>
+              <% end %>
+              
+              <div class="p-2">
+                <%= room.user.name %>
               </div>
-            <% end %>
-            
-            <div class="p-2">
-              <%= room.user.name %>
+              
+              <div class="p-2">
+                <%= room.user.greeting %>
+              </div>
+              
+              <div class="p-2 mr-3">
+                <%= link_to "DM", chat_path(room.user.id), class: "btn btn-outline-success" %>
+              </div>
+              
             </div>
-            
-            <div class="p-2">
-              <%= room.user.greeting %>
-            </div>
-            
-            <div class="p-2 mr-3">
-              <%= link_to "DM", chat_path(room.user.id), class: "btn btn-outline-success" %>
-            </div>
-            
+          <% end %>
+        <% else %>
+          <div class="text-center">
+            チャットルームはありません。</br>
+            他の<%= link_to "ユーザー", users_path(a: "dm") %>にメッセージを送ってみましょう！
           </div>
         <% end %>
           
