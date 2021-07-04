@@ -76,3 +76,5 @@ gem 'rails-i18n'
 group :production do
   gem 'mysql2'
 end
+
+gem 'google-cloud-vision', "~> 0.32.0"
