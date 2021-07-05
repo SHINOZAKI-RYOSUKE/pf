@@ -43,6 +43,7 @@ class ContentsController < ApplicationController
 
     # 画像が編集された場合
     if params[:content][:content_image].present? && params[:content][:content_image] != "{}"
+      # railsの仕様で、nilではなく"{}"が返ってきてしまう問題の解決策が上記の右側。
       # パラメーター(画像)を「tempfile」として開いて変数に代入
       profile_image = File.open(params[:content][:content_image].tempfile)
       # Cloud Vision APIで画像分析して、分析結果を変数に代入
@@ -73,6 +74,7 @@ class ContentsController < ApplicationController
 
     # 画像が編集された場合
     if params[:content][:content_image].present? && params[:content][:content_image] != "{}"
+      # railsの仕様で、nilではなく"{}"が返ってきてしまう問題の解決策が上記の右側。
       # パラメーター(画像)を「tempfile」として開いて変数に代入
       profile_image = File.open(params[:content][:content_image].tempfile)
       # Cloud Vision APIで画像分析して、分析結果を変数に代入
