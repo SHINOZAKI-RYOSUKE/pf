@@ -33,3 +33,5 @@
 /.env
 
 /plexiform-muse-318516-9dd40885acf2.json
+
+/public/uploads/
