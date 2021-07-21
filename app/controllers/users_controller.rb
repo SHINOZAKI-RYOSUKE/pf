@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @users = User.all.order(created_at: :desc)
     
     if params[:a] == "dm"
+    #チャット一覧からユーザー一覧ページに遷移すると『フォローボタンがDMボタン』に変化する。
       @a = "dm"
     end
   end
