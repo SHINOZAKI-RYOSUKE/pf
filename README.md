@@ -388,30 +388,43 @@ rails g controller chats index show
 
 
     devise_for :users
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-   
-    root :to => "contents#index"
-    
+  root :to => "contents#index"
+
+
+    post '/contents/guest_sign_in', to: 'contents#guest_sign_in'
     
     resource :homes do
      get :about, on: :collection
     end
-    
+
 
     resources :users, only: [:index, :show, :edit, :update] do
-     resource :relationships, only: [:index, :create, :destroy]
+     resources :relationships, only: [:index]
+     resource  :relationships, only: [:create, :destroy]
     end
-    
+
 
     resources :contents do
-     resource :favorites, only: [:index, :create, :destroy]
-     resources :comments, only: [:index, :create, :destroy]
+     resources :favorites, only: [:index]
+     resource  :favorites, only: [:create, :destroy]
+     resources :comments,  only: [:destroy]
+     resource  :comments,  only: [:create]
     end
-    
-    
+
+
+    get "search" => "searches#search_result", as: "search_result"
+
     get 'chat/:id' => 'chats#show', as: 'chat'
- 
+
     resources :chats, only: [:index, :create]
+    
+    resources :notifications, only: [:index] do
+     delete :destroy_all , on: :collection
+     
+    end
+
     
 ~~~
 </details>
