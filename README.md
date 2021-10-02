@@ -428,5 +428,3 @@ rails g controller chats index show
     
 ~~~
 </details>
-
-追加＊通知機能のコントローラーとモデル。ER図書き換えアプリケーション詳細設定の書き換え。（７／２５に）
